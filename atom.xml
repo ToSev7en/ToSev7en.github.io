@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-06T13:20:49.150Z</updated>
+  <updated>2018-04-17T08:27:27.683Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,26 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>named-entity-recognize</title>
-    <link href="http://yoursite.com/2018/03/06/named-entity-recognize/"/>
-    <id>http://yoursite.com/2018/03/06/named-entity-recognize/</id>
+    <title>CS231n笔记14 - 卷积神经网络 - 卷积和池化</title>
+    <link href="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/"/>
+    <id>http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/</id>
     <published>2018-03-06T13:12:20.000Z</published>
-    <updated>2018-03-06T13:20:49.150Z</updated>
+    <updated>2018-04-17T08:27:27.683Z</updated>
     
-    <content type="html"><![CDATA[<p>zcndsjc</p><p>dafsd</p><img src="/2018/03/06/named-entity-recognize/研究生课表_dt97z7p0y.jpg" title="This is an example image">]]></content>
+    <content type="html"><![CDATA[<h3 id="Fully-Connected-Layer-全连接层"><a href="#Fully-Connected-Layer-全连接层" class="headerlink" title="Fully Connected Layer 全连接层"></a>Fully Connected Layer 全连接层</h3><img src="/2018/03/06/cnn-convolution-and-pooling/FCLayer.jpg" title="From CS231N"><p>32 \( \times \) 32\(\times\)3 image \(\to\) stretch to 3072\(\times\)1</p><h3 id="Convolution-Layer-卷积层"><a href="#Convolution-Layer-卷积层" class="headerlink" title="Convolution Layer 卷积层"></a>Convolution Layer 卷积层</h3><p>卷积层与全连接层的主要差别在于前者可以保全 <em>空间结构</em> (Spatial Structure)</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;zcndsjc&lt;/p&gt;
-&lt;p&gt;dafsd&lt;/p&gt;
-&lt;img src=&quot;/2018/03/06/named-entity-recognize/研究生课表_dt97z7p0y.jpg&quot; title=&quot;This is an example image&quot;&gt;
-
+        &lt;h3 id=&quot;Fully-Connected-Layer-全连接层&quot;&gt;&lt;a href=&quot;#Fully-Connected-Layer-全连接层&quot; class=&quot;headerlink&quot; title=&quot;Fully Connected Layer 全连接层&quot;&gt;&lt;/a&gt;Fully Co
       
     
     </summary>
     
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
     
   </entry>
   
@@ -55,13 +54,42 @@
   </entry>
   
   <entry>
+    <title>Markdonw 和 MathJax</title>
+    <link href="http://yoursite.com/2018/03/06/markdown-mathjax-starter/"/>
+    <id>http://yoursite.com/2018/03/06/markdown-mathjax-starter/</id>
+    <published>2018-03-06T12:12:20.000Z</published>
+    <updated>2018-04-17T08:27:56.208Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>MathJax Enabled:</p><p>\( x_i \)</p><script type="math/tex; mode=display">\begin{equation}\begin{split}\frac{\partial^2 f}{\partial{x^2}} &= \frac{\partial(\Delta_x f(i,j))}{\partial x} = \frac{\partial(f(i+1,j)-f(i,j))}{\partial x} \\&= \frac{\partial f(i+1,j)}{\partial x} - \frac{\partial f(i,j)}{\partial x} \\&= f(i+2,j) -2f(f+1,j) + f(i,j)\end{split}\nonumber\end{equation}</script><p>$s$</p><script type="math/tex; mode=display">\left(    \begin{array}{c}      s \\      t    \end{array}\right)=\left(    \begin{array}{cc}      cos(b) & -sin(b) \\      sin(b) & cos(b)    \end{array}\right)\left(    \begin{array}{c}      x \\      y    \end{array}\right)</script><script type="math/tex; mode=display">f\left(    \left[        \frac{            1+\left\{x,y\right\}        }{        \left(            \frac{x}{y}+\frac{y}{x}        \right)        \left(u+1\right)        }+a    \right]^{3\2}\right)</script><script type="math/tex; mode=display">X_i</script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;MathJax Enabled:&lt;/p&gt;
+&lt;p&gt;\( x_i \)&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\begin{equation}
+\begin{split}
+\frac{\partial^2 f}{\par
+      
+    
+    </summary>
+    
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Machine Learning Glossary</title>
     <link href="http://yoursite.com/2018/03/06/machine-learning-glossary/"/>
     <id>http://yoursite.com/2018/03/06/machine-learning-glossary/</id>
     <published>2018-03-06T06:46:25.000Z</published>
-    <updated>2018-04-17T06:40:54.235Z</updated>
+    <updated>2018-04-17T06:57:01.092Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p>[x] ed</p><h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p><code>dropout</code></p><h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><p>$$x^2+y^2 = 12$$</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br></pre></td></tr></table></figure><h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p>[x] ed</p><h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p><code>dropout</code></p><h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><script type="math/tex; mode=display">x^2 \times y^2 = 12</script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br></pre></td></tr></table></figure><h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2>]]></content>
     
     <summary type="html">
     
@@ -81,9 +109,9 @@
     <link href="http://yoursite.com/2018/03/03/bag-of-words-model/"/>
     <id>http://yoursite.com/2018/03/03/bag-of-words-model/</id>
     <published>2018-03-03T05:00:08.000Z</published>
-    <updated>2018-04-17T06:40:06.564Z</updated>
+    <updated>2018-04-17T06:49:07.926Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Bag-of-words-model-词袋模型"><a href="#Bag-of-words-model-词袋模型" class="headerlink" title="Bag-of-words model 词袋模型"></a>Bag-of-words model 词袋模型</h2><p>所谓 <a href="https://en.wikipedia.org/wiki/Bag-of-words_model" target="_blank" rel="noopener">Bag-of-words model</a> 即“词袋模型”</p><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Bag-of-words-model-词袋模型"><a href="#Bag-of-words-model-词袋模型" class="headerlink" title="Bag-of-words model 词袋模型"></a>Bag-of-words model 词袋模型</h2><p>所谓 <a href="https://en.wikipedia.org/wiki/Bag-of-words_model" target="_blank" rel="noopener">Bag-of-words model</a> 即“词袋模型”.</p>]]></content>
     
     <summary type="html">
     

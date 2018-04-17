@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/03/06/markdown-mathjax-starter/</loc>
+    
+    <lastmod>2018-04-17T08:27:56.208Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/</loc>
+    
+    <lastmod>2018-04-17T08:27:27.683Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/03/06/machine-learning-glossary/</loc>
     
-    <lastmod>2018-04-17T06:40:54.235Z</lastmod>
+    <lastmod>2018-04-17T06:57:01.092Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2018/03/03/bag-of-words-model/</loc>
     
-    <lastmod>2018-04-17T06:40:06.564Z</lastmod>
+    <lastmod>2018-04-17T06:49:07.926Z</lastmod>
     
   </url>
   
@@ -19,13 +33,6 @@
     <loc>http://yoursite.com/2018/03/06/hmm-model/</loc>
     
     <lastmod>2018-03-06T13:22:25.612Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/06/named-entity-recognize/</loc>
-    
-    <lastmod>2018-03-06T13:20:49.150Z</lastmod>
     
   </url>
   
