@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-17T08:27:27.683Z</updated>
+  <updated>2018-04-17T15:55:18.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/"/>
     <id>http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/</id>
     <published>2018-03-06T13:12:20.000Z</published>
-    <updated>2018-04-17T08:27:27.683Z</updated>
+    <updated>2018-04-17T15:55:18.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="Fully-Connected-Layer-全连接层"><a href="#Fully-Connected-Layer-全连接层" class="headerlink" title="Fully Connected Layer 全连接层"></a>Fully Connected Layer 全连接层</h3><img src="/2018/03/06/cnn-convolution-and-pooling/FCLayer.jpg" title="From CS231N"><p>32 \( \times \) 32\(\times\)3 image \(\to\) stretch to 3072\(\times\)1</p><h3 id="Convolution-Layer-卷积层"><a href="#Convolution-Layer-卷积层" class="headerlink" title="Convolution Layer 卷积层"></a>Convolution Layer 卷积层</h3><p>卷积层与全连接层的主要差别在于前者可以保全 <em>空间结构</em> (Spatial Structure)</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="Fully-Connected-Layer-全连接层"><a href="#Fully-Connected-Layer-全连接层" class="headerlink" title="Fully Connected Layer 全连接层"></a>Fully Connected Layer 全连接层</h3><img src="/2018/03/06/cnn-convolution-and-pooling/FCLayer.jpg" title="From CS231N"><p>32 \( \times \) 32\(\times\)3 image \(\to\) stretch to 3072\(\times\)1</p><h3 id="Convolution-Layer-卷积层"><a href="#Convolution-Layer-卷积层" class="headerlink" title="Convolution Layer 卷积层"></a>Convolution Layer 卷积层</h3><p>卷积层与全连接层的主要差别在于前者可以保全 <em>空间结构</em> (Spatial Structure)。处理一张 32 \( \times \) 32\(\times\)3 的图片，不同于全连接层中将其展开为一维的长向量作为输入，我们在卷积层直接将图片的三维的结构输入，这样我们就可以保持图片的结构。</p><img src="/2018/03/06/cnn-convolution-and-pooling/ConvLayer.jpg" title="From Stanford CS231N"><p>接下来，我们的权重是一些小的卷积核，例如 5 \( \times \) 5 \(\times\) 3 的大小，我们将把这个卷积核在整个图像上滑动，并计算出在每一个<em>空间定位</em>（Spatial Location）时的 Dot Product。</p><img src="/2018/03/06/cnn-convolution-and-pooling/0-3.gif" title="From Stanford CS231N"><p>首先，我们采用的卷积核总是会将输入量扩展至完全（extend the Full Depth of the input volume）。它们都是很小的空间区域，这里是  5 \( \times \) 5 而不是输入空间的全部大小 32 \( \times \) 32，但是他们通常会遍历所有的RGB通道 ，所以这里我们采用的卷积核的大小为  5 \( \times \) 5 \(\times\) 3 。</p><img src="/2018/03/06/cnn-convolution-and-pooling/ConvFilter.jpg" title="From Stanford CS231N">]]></content>
     
     <summary type="html">
     
@@ -54,11 +54,11 @@
   </entry>
   
   <entry>
-    <title>Markdonw 和 MathJax</title>
+    <title>Hexo 博客 Markdown 和 MathJax 配置</title>
     <link href="http://yoursite.com/2018/03/06/markdown-mathjax-starter/"/>
     <id>http://yoursite.com/2018/03/06/markdown-mathjax-starter/</id>
     <published>2018-03-06T12:12:20.000Z</published>
-    <updated>2018-04-17T08:27:56.208Z</updated>
+    <updated>2018-04-17T08:29:22.901Z</updated>
     
     <content type="html"><![CDATA[<hr><p>MathJax Enabled:</p><p>\( x_i \)</p><script type="math/tex; mode=display">\begin{equation}\begin{split}\frac{\partial^2 f}{\partial{x^2}} &= \frac{\partial(\Delta_x f(i,j))}{\partial x} = \frac{\partial(f(i+1,j)-f(i,j))}{\partial x} \\&= \frac{\partial f(i+1,j)}{\partial x} - \frac{\partial f(i,j)}{\partial x} \\&= f(i+2,j) -2f(f+1,j) + f(i,j)\end{split}\nonumber\end{equation}</script><p>$s$</p><script type="math/tex; mode=display">\left(    \begin{array}{c}      s \\      t    \end{array}\right)=\left(    \begin{array}{cc}      cos(b) & -sin(b) \\      sin(b) & cos(b)    \end{array}\right)\left(    \begin{array}{c}      x \\      y    \end{array}\right)</script><script type="math/tex; mode=display">f\left(    \left[        \frac{            1+\left\{x,y\right\}        }{        \left(            \frac{x}{y}+\frac{y}{x}        \right)        \left(u+1\right)        }+a    \right]^{3\2}\right)</script><script type="math/tex; mode=display">X_i</script>]]></content>
     
@@ -78,7 +78,7 @@
     </summary>
     
     
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+      <category term="other" scheme="http://yoursite.com/tags/other/"/>
     
   </entry>
   
