@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2018/03/03/bag-of-words-model/</loc>
+    <loc>http://yoursite.com/2018/03/06/machine-learning-glossary/</loc>
     
-    <lastmod>2018-03-06T12:17:31.713Z</lastmod>
+    <lastmod>2018-04-17T06:40:54.235Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/03/06/machine-learning-glossary/</loc>
+    <loc>http://yoursite.com/2018/03/03/bag-of-words-model/</loc>
     
-    <lastmod>2018-03-06T11:11:28.002Z</lastmod>
+    <lastmod>2018-04-17T06:40:06.564Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/06/hmm-model/</loc>
+    
+    <lastmod>2018-03-06T13:22:25.612Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/06/named-entity-recognize/</loc>
+    
+    <lastmod>2018-03-06T13:20:49.150Z</lastmod>
     
   </url>
   
