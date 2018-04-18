@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-18T06:03:23.535Z</updated>
+  <updated>2018-04-18T08:34:28.843Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,26 +17,56 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>N-Gram 语言模型</title>
-    <link href="http://yoursite.com/2018/04/18/%08language-modeling-with-n-grams/"/>
-    <id>http://yoursite.com/2018/04/18/language-modeling-with-n-grams/</id>
-    <published>2018-04-18T04:12:20.000Z</published>
-    <updated>2018-04-18T06:03:23.535Z</updated>
+    <title>CS224N Lecture 4 - Word Window Classification and NN</title>
+    <link href="http://yoursite.com/2018/04/18/word-window-classification-and-nn/"/>
+    <id>http://yoursite.com/2018/04/18/word-window-classification-and-nn/</id>
+    <published>2018-04-18T07:12:20.000Z</published>
+    <updated>2018-04-18T08:34:28.843Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>“You are uniformly charming!” cried he, with a smile of associating and now and then I bowed and they perceived a chaise and for to wish for. —— Random sentence generated from Jane Austen trigram model</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<img src="/2018/04/18/word-window-classification-and-nn/lecture4.jpg"><h3 id="课程内容概要"><a href="#课程内容概要" class="headerlink" title="#课程内容概要"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>课程内容概要</h3><p>这一节课将会深入了解 NLP 中分类问题。</p><img src="/2018/04/18/word-window-classification-and-nn/overview.jpg"><h3 id="分类的定义和符号表示"><a href="#分类的定义和符号表示" class="headerlink" title="#分类的定义和符号表示"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>分类的定义和符号表示</h3><img src="/2018/04/18/word-window-classification-and-nn/classification-notation.jpg"><h3 id="分类的直觉理解"><a href="#分类的直觉理解" class="headerlink" title="#分类的直觉理解"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>分类的直觉理解</h3><p>根据传统的机器学习的“套路”，我们一般使用简单的模型（比如 <code>Logistic Regression</code>）来定义和学习分类问题的决策边界（<code>Decision Boundary</code>），使得模型能够通过这个决策边界区分两个或多个类别。在一般的机器学习流程中，我们一般假定输入是固定的（Fixed），然后只需要训练 $W$ 参数（即 SoftMax 权重），通过给定的输入 $X$ 来计算 $Y$ 的概率。</p><img src="/2018/04/18/word-window-classification-and-nn/classifi-intitution.jpg"><h3 id="SoftMax分类器"><a href="#SoftMax分类器" class="headerlink" title="#SoftMax分类器"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>SoftMax分类器</h3><img src="/2018/04/18/word-window-classification-and-nn/softmax.png"><h3 id="利用SoftMax和交叉熵误差进行训练"><a href="#利用SoftMax和交叉熵误差进行训练" class="headerlink" title="#利用SoftMax和交叉熵误差进行训练"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>利用SoftMax和交叉熵误差进行训练</h3><img src="/2018/04/18/word-window-classification-and-nn/train-with-cross-entropy.png"><h3 id="Course-Materials"><a href="#Course-Materials" class="headerlink" title="#Course Materials"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>Course Materials</h3><p><a href="http://web.stanford.edu/class/cs224n/lectures/lecture4.pdf" target="_blank" rel="noopener">[Lecture4 Slide]</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;blockquote&gt;
-&lt;p&gt;“You are uniformly charming!” cried he, with a smile of associating and now and then I bowed and they perceived a chaise and
+        &lt;img src=&quot;/2018/04/18/word-window-classification-and-nn/lecture4.jpg&quot;&gt;
+&lt;h3 id=&quot;课程内容概要&quot;&gt;&lt;a href=&quot;#课程内容概要&quot; class=&quot;headerlink&quot; title=&quot;#课程内容概要&quot;&gt;
       
     
     </summary>
     
     
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
+    
+      <category term="Notes" scheme="http://yoursite.com/tags/Notes/"/>
+    
+      <category term="CS224N" scheme="http://yoursite.com/tags/CS224N/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>N-Gram 语言模型</title>
+    <link href="http://yoursite.com/2018/04/18/%08language-modeling-with-n-grams/"/>
+    <id>http://yoursite.com/2018/04/18/language-modeling-with-n-grams/</id>
+    <published>2018-04-18T04:12:20.000Z</published>
+    <updated>2018-04-18T07:27:09.325Z</updated>
+    
+    <content type="html"><![CDATA[<!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --><!-- 其中 class="blockquote-center" 是必须的 --><p><blockquote class="blockquote-center">" You are uniformly charming ! " cried he, with a smile of associating and now and then I bowed and they perceived a chaise and for to wish for. </blockquote><br> Random sentence generated from Jane Austen trigram model </p><blockquote><p>“You are uniformly charming!” cried he, with a smile of associating and now and then I bowed and they perceived a chaise and for to wish for. —— Random sentence generated from Jane Austen trigram model</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;
+&lt;!-- 其中 class=&quot;blockquote-center&quot; 是必须的 --&gt;
+&lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;
+&quot; You are 
+      
+    
+    </summary>
+    
+    
+      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
   </entry>
   
@@ -45,7 +75,7 @@
     <link href="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/"/>
     <id>http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/</id>
     <published>2018-03-06T13:12:20.000Z</published>
-    <updated>2018-04-17T15:55:18.000Z</updated>
+    <updated>2018-04-18T07:27:42.714Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Fully-Connected-Layer-全连接层"><a href="#Fully-Connected-Layer-全连接层" class="headerlink" title="Fully Connected Layer 全连接层"></a>Fully Connected Layer 全连接层</h3><img src="/2018/03/06/cnn-convolution-and-pooling/FCLayer.jpg" title="From CS231N"><p>32 \( \times \) 32\(\times\)3 image \(\to\) stretch to 3072\(\times\)1</p><h3 id="Convolution-Layer-卷积层"><a href="#Convolution-Layer-卷积层" class="headerlink" title="Convolution Layer 卷积层"></a>Convolution Layer 卷积层</h3><p>卷积层与全连接层的主要差别在于前者可以保全 <em>空间结构</em> (Spatial Structure)。处理一张 32 \( \times \) 32\(\times\)3 的图片，不同于全连接层中将其展开为一维的长向量作为输入，我们在卷积层直接将图片的三维的结构输入，这样我们就可以保持图片的结构。</p><img src="/2018/03/06/cnn-convolution-and-pooling/ConvLayer.jpg" title="From Stanford CS231N"><p>接下来，我们的权重是一些小的卷积核，例如 5 \( \times \) 5 \(\times\) 3 的大小，我们将把这个卷积核在整个图像上滑动，并计算出在每一个<em>空间定位</em>（Spatial Location）时的 Dot Product。</p><img src="/2018/03/06/cnn-convolution-and-pooling/0-3.gif" title="From Stanford CS231N"><p>首先，我们采用的卷积核总是会将输入量扩展至完全（extend the Full Depth of the input volume）。它们都是很小的空间区域，这里是  5 \( \times \) 5 而不是输入空间的全部大小 32 \( \times \) 32，但是他们通常会遍历所有的RGB通道 ，所以这里我们采用的卷积核的大小为  5 \( \times \) 5 \(\times\) 3 。</p><img src="/2018/03/06/cnn-convolution-and-pooling/ConvFilter.jpg" title="From Stanford CS231N">]]></content>
     
@@ -59,7 +89,11 @@
     </summary>
     
     
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+      <category term="Notes" scheme="http://yoursite.com/tags/Notes/"/>
+    
+      <category term="CS231N" scheme="http://yoursite.com/tags/CS231N/"/>
+    
+      <category term="CNN" scheme="http://yoursite.com/tags/CNN/"/>
     
   </entry>
   
@@ -82,7 +116,7 @@
     <link href="http://yoursite.com/2018/03/06/markdown-mathjax-starter/"/>
     <id>http://yoursite.com/2018/03/06/markdown-mathjax-starter/</id>
     <published>2018-03-06T12:12:20.000Z</published>
-    <updated>2018-04-18T06:03:21.071Z</updated>
+    <updated>2018-04-18T07:26:42.643Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-math –<span class="keyword">save</span></span><br><span class="line">npm <span class="keyword">uninstall</span> hexo-renderer-marked –<span class="keyword">save</span> </span><br><span class="line">npm <span class="keyword">install</span> hexo-renderer-kramed –<span class="keyword">save</span></span><br></pre></td></tr></table></figure><p>Enter <code>node_modules\kramed\lib\rules\inline.js</code></p><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//escape: /^<span class="symbol">\\</span>([<span class="symbol">\\</span>`*&#123;&#125;<span class="symbol">\[</span><span class="symbol">\]</span>()#$+<span class="symbol">\-</span>.!_&gt;])/,</span><br><span class="line">  escape: /^<span class="symbol">\\</span>([`*<span class="symbol">\[</span><span class="symbol">\]</span>()#$+<span class="symbol">\-</span>.!_&gt;])/,</span><br><span class="line"></span><br><span class="line">//em: /^<span class="symbol">\b</span>_((?:__|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)_<span class="symbol">\b</span>|^<span class="symbol">\*</span>((?:<span class="symbol">\*</span><span class="symbol">\*</span>|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)<span class="symbol">\*</span>(?!<span class="symbol">\*</span>)/,</span><br><span class="line">  em: /^<span class="symbol">\*</span>((?:<span class="symbol">\*</span><span class="symbol">\*</span>|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)<span class="symbol">\*</span>(?!<span class="symbol">\*</span>)/,</span><br></pre></td></tr></table></figure><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># MathJax Support</span></span><br><span class="line"><span class="attr">mathjax:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  per_page:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment">#cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML</span></span><br><span class="line"><span class="attr">  cdn:</span> <span class="string">//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_</span></span><br></pre></td></tr></table></figure><hr><p>MathJax Enabled:</p><p>\( x_i \)</p><script type="math/tex; mode=display">\begin{equation}\begin{split}\frac{\partial^2 f}{\partial{x^2}} &= \frac{\partial(\Delta_x f(i,j))}{\partial x} = \frac{\partial(f(i+1,j)-f(i,j))}{\partial x} \\&= \frac{\partial f(i+1,j)}{\partial x} - \frac{\partial f(i,j)}{\partial x} \\&= f(i+2,j) -2f(f+1,j) + f(i,j)\end{split}\nonumber\end{equation}</script><p>$s$</p><script type="math/tex; mode=display">\left(    \begin{array}{c}      s \\      t    \end{array}\right)=\left(    \begin{array}{cc}      cos(b) & -sin(b) \\      sin(b) & cos(b)    \end{array}\right)\left(    \begin{array}{c}      x \\      y    \end{array}\right)</script><script type="math/tex; mode=display">f\left(    \left[        \frac{            1+\left\{x,y\right\}        }{        \left(            \frac{x}{y}+\frac{y}{x}        \right)        \left(u+1\right)        }+a    \right]^{3\2}\right)</script><script type="math/tex; mode=display">X_i</script>]]></content>
     
@@ -96,7 +130,7 @@
     </summary>
     
     
-      <category term="other" scheme="http://yoursite.com/tags/other/"/>
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
   </entry>
   
@@ -105,9 +139,9 @@
     <link href="http://yoursite.com/2018/03/06/machine-learning-glossary/"/>
     <id>http://yoursite.com/2018/03/06/machine-learning-glossary/</id>
     <published>2018-03-06T06:46:25.000Z</published>
-    <updated>2018-04-17T06:57:01.092Z</updated>
+    <updated>2018-04-18T07:57:19.699Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p>[x] ed</p><h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p><code>dropout</code></p><h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><script type="math/tex; mode=display">x^2 \times y^2 = 12</script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br></pre></td></tr></table></figure><h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p>[x] ed</p><h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p><code>Decision Boundary</code><br><code>dropout</code></p><h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><script type="math/tex; mode=display">x^2 \times y^2 = 12</script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br></pre></td></tr></table></figure><h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><h2 id="L"><a href="#L" class="headerlink" title="L"></a>L</h2><p><code>Logistic Regression</code></p>]]></content>
     
     <summary type="html">
     
@@ -127,7 +161,7 @@
     <link href="http://yoursite.com/2018/03/03/bag-of-words-model/"/>
     <id>http://yoursite.com/2018/03/03/bag-of-words-model/</id>
     <published>2018-03-03T05:00:08.000Z</published>
-    <updated>2018-04-17T06:49:07.926Z</updated>
+    <updated>2018-04-18T07:27:51.460Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Bag-of-words-model-词袋模型"><a href="#Bag-of-words-model-词袋模型" class="headerlink" title="Bag-of-words model 词袋模型"></a>Bag-of-words model 词袋模型</h2><p>所谓 <a href="https://en.wikipedia.org/wiki/Bag-of-words_model" target="_blank" rel="noopener">Bag-of-words model</a> 即“词袋模型”.</p>]]></content>
     
@@ -140,6 +174,8 @@
     
     </summary>
     
+    
+      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
   </entry>
   

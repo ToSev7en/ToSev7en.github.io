@@ -245,6 +245,134 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/18/word-window-classification-and-nn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ToSev7en">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/18/word-window-classification-and-nn/" itemprop="url">CS224N Lecture 4 - Word Window Classification and NN</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-18T15:12:20+08:00">
+                2018-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <img src="/2018/04/18/word-window-classification-and-nn/lecture4.jpg">
+<h3 id="课程内容概要"><a href="#课程内容概要" class="headerlink" title="#课程内容概要"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>课程内容概要</h3><p>这一节课将会深入了解 NLP 中分类问题。</p>
+<img src="/2018/04/18/word-window-classification-and-nn/overview.jpg">
+<h3 id="分类的定义和符号表示"><a href="#分类的定义和符号表示" class="headerlink" title="#分类的定义和符号表示"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>分类的定义和符号表示</h3><img src="/2018/04/18/word-window-classification-and-nn/classification-notation.jpg">
+<h3 id="分类的直觉理解"><a href="#分类的直觉理解" class="headerlink" title="#分类的直觉理解"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>分类的直觉理解</h3><p>根据传统的机器学习的“套路”，我们一般使用简单的模型（比如 <code>Logistic Regression</code>）来定义和学习分类问题的决策边界（<code>Decision Boundary</code>），使得模型能够通过这个决策边界区分两个或多个类别。在一般的机器学习流程中，我们一般假定输入是固定的（Fixed），然后只需要训练 $W$ 参数（即 SoftMax 权重），通过给定的输入 $X$ 来计算 $Y$ 的概率。</p>
+<img src="/2018/04/18/word-window-classification-and-nn/classifi-intitution.jpg">
+<h3 id="SoftMax分类器"><a href="#SoftMax分类器" class="headerlink" title="#SoftMax分类器"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>SoftMax分类器</h3><img src="/2018/04/18/word-window-classification-and-nn/softmax.png">
+<h3 id="利用SoftMax和交叉熵误差进行训练"><a href="#利用SoftMax和交叉熵误差进行训练" class="headerlink" title="#利用SoftMax和交叉熵误差进行训练"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>利用SoftMax和交叉熵误差进行训练</h3><img src="/2018/04/18/word-window-classification-and-nn/train-with-cross-entropy.png">
+<h3 id="Course-Materials"><a href="#Course-Materials" class="headerlink" title="#Course Materials"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>Course Materials</h3><p><a href="http://web.stanford.edu/class/cs224n/lectures/lecture4.pdf" target="_blank" rel="noopener">[Lecture4 Slide]</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/18/language-modeling-with-n-grams/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -316,7 +444,12 @@
       
         
           
-            <blockquote>
+            <!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 -->
+<!-- 其中 class="blockquote-center" 是必须的 -->
+<p><blockquote class="blockquote-center">
+" You are uniformly charming ! " cried he, with a smile of associating and now and then I bowed and they perceived a chaise and for to wish for. 
+</blockquote><br> Random sentence generated from Jane Austen trigram model </p>
+<blockquote>
 <p>“You are uniformly charming!” cried he, with a smile of associating and now and then I bowed and they perceived a chaise and for to wish for. —— Random sentence generated from Jane Austen trigram model</p>
 </blockquote>
 
@@ -851,9 +984,10 @@ f\left(
         
           
             <h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p>[x] ed</p>
-<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p><code>dropout</code></p>
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p><code>Decision Boundary</code><br><code>dropout</code></p>
 <h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><script type="math/tex; mode=display">x^2 \times y^2 = 12</script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br></pre></td></tr></table></figure>
-<h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2>
+<h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><h2 id="L"><a href="#L" class="headerlink" title="L"></a>L</h2><p><code>Logistic Regression</code></p>
+
           
         
       
@@ -1182,7 +1316,7 @@ f\left(
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1195,7 +1329,7 @@ f\left(
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

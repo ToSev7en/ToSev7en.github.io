@@ -2,44 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
+    <loc>http://yoursite.com/2018/04/18/word-window-classification-and-nn/</loc>
     
-    <lastmod>2018-04-18T06:11:33.077Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/04/18/%08language-modeling-with-n-grams/</loc>
-    
-    <lastmod>2018-04-18T06:03:23.535Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/06/markdown-mathjax-starter/</loc>
-    
-    <lastmod>2018-04-18T06:03:21.071Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/</loc>
-    
-    <lastmod>2018-04-17T15:55:18.000Z</lastmod>
+    <lastmod>2018-04-18T08:34:28.843Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2018/03/06/machine-learning-glossary/</loc>
     
-    <lastmod>2018-04-17T06:57:01.092Z</lastmod>
+    <lastmod>2018-04-18T07:57:19.699Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2018/03/03/bag-of-words-model/</loc>
     
-    <lastmod>2018-04-17T06:49:07.926Z</lastmod>
+    <lastmod>2018-04-18T07:27:51.460Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/</loc>
+    
+    <lastmod>2018-04-18T07:27:42.714Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/18/%08language-modeling-with-n-grams/</loc>
+    
+    <lastmod>2018-04-18T07:27:09.325Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/06/markdown-mathjax-starter/</loc>
+    
+    <lastmod>2018-04-18T07:26:42.643Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2018-04-18T06:11:33.077Z</lastmod>
     
   </url>
   

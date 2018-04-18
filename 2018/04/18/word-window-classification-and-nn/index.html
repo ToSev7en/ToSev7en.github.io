@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="NLP," />
+  <meta name="keywords" content="NLP,Notes,CS224N," />
 
 
 
@@ -85,18 +85,25 @@
 
 
 
-<meta name="description" content="Bag-of-words model 词袋模型所谓 Bag-of-words model 即“词袋模型”.">
-<meta name="keywords" content="NLP">
+<meta name="description" content="#课程内容概要这一节课将会深入了解 NLP 中分类问题。  #分类的定义和符号表示 #分类的直觉理解根据传统的机器学习的“套路”，我们一般使用简单的模型（比如 Logistic Regression）来定义和学习分类问题的决策边界（Decision Boundary），使得模型能够通过这个决策边界区分两个或多个类别。在一般的机器学习流程中，我们一般假定输入是固定的（Fixed），然后只需要训练">
+<meta name="keywords" content="NLP,Notes,CS224N">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bag-of-Words-Model">
-<meta property="og:url" content="http://yoursite.com/2018/03/03/bag-of-words-model/index.html">
+<meta property="og:title" content="CS224N Lecture 4 - Word Window Classification and NN">
+<meta property="og:url" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Bag-of-words model 词袋模型所谓 Bag-of-words model 即“词袋模型”.">
+<meta property="og:description" content="#课程内容概要这一节课将会深入了解 NLP 中分类问题。  #分类的定义和符号表示 #分类的直觉理解根据传统的机器学习的“套路”，我们一般使用简单的模型（比如 Logistic Regression）来定义和学习分类问题的决策边界（Decision Boundary），使得模型能够通过这个决策边界区分两个或多个类别。在一般的机器学习流程中，我们一般假定输入是固定的（Fixed），然后只需要训练">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-18T07:27:51.460Z">
+<meta property="og:image" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/lecture4.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/overview.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/classification-notation.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/classifi-intitution.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/softmax.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/train-with-cross-entropy.png">
+<meta property="og:updated_time" content="2018-04-18T08:34:28.843Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bag-of-Words-Model">
-<meta name="twitter:description" content="Bag-of-words model 词袋模型所谓 Bag-of-words model 即“词袋模型”.">
+<meta name="twitter:title" content="CS224N Lecture 4 - Word Window Classification and NN">
+<meta name="twitter:description" content="#课程内容概要这一节课将会深入了解 NLP 中分类问题。  #分类的定义和符号表示 #分类的直觉理解根据传统的机器学习的“套路”，我们一般使用简单的模型（比如 Logistic Regression）来定义和学习分类问题的决策边界（Decision Boundary），使得模型能够通过这个决策边界区分两个或多个类别。在一般的机器学习流程中，我们一般假定输入是固定的（Fixed），然后只需要训练">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/lecture4.jpg">
 
 
 
@@ -126,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/03/bag-of-words-model/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/18/word-window-classification-and-nn/"/>
 
 
 
 
 
-  <title>Bag-of-Words-Model | Hexo</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>CS224N Lecture 4 - Word Window Classification and NN | Hexo</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -249,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/03/bag-of-words-model/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/18/word-window-classification-and-nn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ToSev7en">
@@ -266,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Bag-of-Words-Model</h1>
+          <h1 class="post-title" itemprop="name headline">CS224N Lecture 4 - Word Window Classification and NN</h1>
         
 
         <div class="post-meta">
@@ -278,8 +285,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-03T13:00:08+08:00">
-                2018-03-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-18T15:12:20+08:00">
+                2018-04-18
               </time>
             
 
@@ -316,7 +323,15 @@
       
 
       
-        <h2 id="Bag-of-words-model-词袋模型"><a href="#Bag-of-words-model-词袋模型" class="headerlink" title="Bag-of-words model 词袋模型"></a>Bag-of-words model 词袋模型</h2><p>所谓 <a href="https://en.wikipedia.org/wiki/Bag-of-words_model" target="_blank" rel="noopener">Bag-of-words model</a> 即“词袋模型”.</p>
+        <img src="/2018/04/18/word-window-classification-and-nn/lecture4.jpg">
+<h3 id="课程内容概要"><a href="#课程内容概要" class="headerlink" title="#课程内容概要"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>课程内容概要</h3><p>这一节课将会深入了解 NLP 中分类问题。</p>
+<img src="/2018/04/18/word-window-classification-and-nn/overview.jpg">
+<h3 id="分类的定义和符号表示"><a href="#分类的定义和符号表示" class="headerlink" title="#分类的定义和符号表示"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>分类的定义和符号表示</h3><img src="/2018/04/18/word-window-classification-and-nn/classification-notation.jpg">
+<h3 id="分类的直觉理解"><a href="#分类的直觉理解" class="headerlink" title="#分类的直觉理解"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>分类的直觉理解</h3><p>根据传统的机器学习的“套路”，我们一般使用简单的模型（比如 <code>Logistic Regression</code>）来定义和学习分类问题的决策边界（<code>Decision Boundary</code>），使得模型能够通过这个决策边界区分两个或多个类别。在一般的机器学习流程中，我们一般假定输入是固定的（Fixed），然后只需要训练 $W$ 参数（即 SoftMax 权重），通过给定的输入 $X$ 来计算 $Y$ 的概率。</p>
+<img src="/2018/04/18/word-window-classification-and-nn/classifi-intitution.jpg">
+<h3 id="SoftMax分类器"><a href="#SoftMax分类器" class="headerlink" title="#SoftMax分类器"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>SoftMax分类器</h3><img src="/2018/04/18/word-window-classification-and-nn/softmax.png">
+<h3 id="利用SoftMax和交叉熵误差进行训练"><a href="#利用SoftMax和交叉熵误差进行训练" class="headerlink" title="#利用SoftMax和交叉熵误差进行训练"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>利用SoftMax和交叉熵误差进行训练</h3><img src="/2018/04/18/word-window-classification-and-nn/train-with-cross-entropy.png">
+<h3 id="Course-Materials"><a href="#Course-Materials" class="headerlink" title="#Course Materials"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>Course Materials</h3><p><a href="http://web.stanford.edu/class/cs224n/lectures/lecture4.pdf" target="_blank" rel="noopener">[Lecture4 Slide]</a></p>
 
       
     </div>
@@ -336,6 +351,10 @@
           
             <a href="/tags/NLP/" rel="tag"># NLP</a>
           
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/CS224N/" rel="tag"># CS224N</a>
+          
         </div>
       
 
@@ -347,8 +366,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/03/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/04/18/language-modeling-with-n-grams/" rel="next" title="N-Gram 语言模型">
+                <i class="fa fa-chevron-left"></i> N-Gram 语言模型
               </a>
             
           </div>
@@ -356,10 +375,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/06/machine-learning-glossary/" rel="prev" title="Machine Learning Glossary">
-                Machine Learning Glossary <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -499,7 +514,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bag-of-words-model-词袋模型"><span class="nav-number">1.</span> <span class="nav-text">Bag-of-words model 词袋模型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#课程内容概要"><span class="nav-number">1.</span> <span class="nav-text">#课程内容概要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类的定义和符号表示"><span class="nav-number">2.</span> <span class="nav-text">#分类的定义和符号表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类的直觉理解"><span class="nav-number">3.</span> <span class="nav-text">#分类的直觉理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SoftMax分类器"><span class="nav-number">4.</span> <span class="nav-text">#SoftMax分类器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用SoftMax和交叉熵误差进行训练"><span class="nav-number">5.</span> <span class="nav-text">#利用SoftMax和交叉熵误差进行训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Course-Materials"><span class="nav-number">6.</span> <span class="nav-text">#Course Materials</span></a></li></ol></div>
             
 
           </div>
@@ -646,24 +661,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -716,6 +714,43 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
   
 
 
