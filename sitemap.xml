@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/</loc>
+    <loc>http://yoursite.com/tags/index.html</loc>
     
-    <lastmod>2018-04-17T15:55:18.000Z</lastmod>
+    <lastmod>2018-04-18T06:11:33.077Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/18/%08language-modeling-with-n-grams/</loc>
+    
+    <lastmod>2018-04-18T06:03:23.535Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2018/03/06/markdown-mathjax-starter/</loc>
     
-    <lastmod>2018-04-17T08:29:22.901Z</lastmod>
+    <lastmod>2018-04-18T06:03:21.071Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/</loc>
+    
+    <lastmod>2018-04-17T15:55:18.000Z</lastmod>
     
   </url>
   
