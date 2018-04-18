@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next mist use-motion" lang="en">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,6 +16,10 @@
 
 
 
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
 
 
 
@@ -65,10 +69,6 @@
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
-  <link rel="manifest" href="/images/manifest.json">
-
-
-  <meta name="msapplication-config" content="/images/browserconfig.xml" />
 
 
 
@@ -91,7 +91,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/03/bag-of-words-model/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Bag-of-words model 词袋模型所谓 Bag-of-words model 即“词袋模型”.">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-04-17T06:49:07.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bag-of-Words-Model">
@@ -143,7 +143,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
@@ -196,16 +196,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
@@ -216,32 +206,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             Archives
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            Commonweal 404
           </a>
         </li>
       
@@ -339,7 +309,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -489,6 +459,16 @@
             </div>
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tosev7en" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -661,7 +641,7 @@
 
   <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+  MathJax.Hub.Config("");
 </script>
 
 <script type="text/x-mathjax-config">
@@ -673,7 +653,7 @@
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/javascript" src="">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->

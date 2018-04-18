@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next mist use-motion" lang="en">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,6 +16,10 @@
 
 
 
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
 
 
 
@@ -65,10 +69,6 @@
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
-  <link rel="manifest" href="/images/manifest.json">
-
-
-  <meta name="msapplication-config" content="/images/browserconfig.xml" />
 
 
 
@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Fully Connected Layer 全连接层 32 \( \times \) 32\(\times\)3 image \(\to\) stretch to 3072\(\times\)1 Convolution Layer 卷积层卷积层与全连接层的主要差别在于前者可以保全 空间结构 (Spatial Structure)。处理一张 32 \( \times \) 32\(\times\)3">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/FCLayer.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/ConvLayer.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/0-3.gif">
@@ -149,7 +149,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
@@ -202,16 +202,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
@@ -222,32 +212,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             Archives
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            Commonweal 404
           </a>
         </li>
       
@@ -345,7 +315,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -508,6 +478,16 @@
             </div>
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tosev7en" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -752,7 +732,7 @@
     </script>
     <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+  MathJax.Hub.Config("");
 </script>
 
 <script type="text/x-mathjax-config">
@@ -764,7 +744,7 @@
   });
 </script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+<script type="text/javascript" src="">
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
