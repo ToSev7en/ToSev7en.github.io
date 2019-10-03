@@ -55,19 +55,23 @@
   };
 </script>
 
-  <meta name="description" content="在使用神经网络进行分类和预测的时候，使用 Cross Entropy Error 来 evaluate 模型比使用 classification error 和 mean squared error 能取得更好的效果。为什么呢？让我来解释一下。基本的 idea 是非常简单的，但是目前有很多对其 main idea 存在误解的看法。首先说明一下我们正在用一个神经网络模型来进行分类任务，比如通过性别、">
-<meta name="keywords" content="ML,DL">
+  <meta name="description" content="注：本文翻译自 CreateMoMo 个人博客，暂未取得作者授权，仅做学习交流使用，如若侵权，立即删除。点击底部阅读原文可直达原博客。 目录该系列文章将会涉及以下几个方面：  Idea 概述 - 在命名实体识别任务中，为什么要在 BiLSTM模型上添加CRF层？  案例解读 - 通过一个简单的实现来揭示：CRF 层是怎样工作的？  Chainer 实现 BiLSTM+CRF 模型（翻译者会努力用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为什么使用  Cross-Entropy Error ？">
-<meta property="og:url" content="http://yoursite.com/2018/04/30/why-cross-entropy-error/index.html">
+<meta property="og:title" content="命名实体识别： BiLSTM 之上的 CRF 层 - 1">
+<meta property="og:url" content="http://yoursite.com/2018/10/04/CRF-1/index.html">
 <meta property="og:site_name" content="TSW">
-<meta property="og:description" content="在使用神经网络进行分类和预测的时候，使用 Cross Entropy Error 来 evaluate 模型比使用 classification error 和 mean squared error 能取得更好的效果。为什么呢？让我来解释一下。基本的 idea 是非常简单的，但是目前有很多对其 main idea 存在误解的看法。首先说明一下我们正在用一个神经网络模型来进行分类任务，比如通过性别、">
+<meta property="og:description" content="注：本文翻译自 CreateMoMo 个人博客，暂未取得作者授权，仅做学习交流使用，如若侵权，立即删除。点击底部阅读原文可直达原博客。 目录该系列文章将会涉及以下几个方面：  Idea 概述 - 在命名实体识别任务中，为什么要在 BiLSTM模型上添加CRF层？  案例解读 - 通过一个简单的实现来揭示：CRF 层是怎样工作的？  Chainer 实现 BiLSTM+CRF 模型（翻译者会努力用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-30T14:08:29.000Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/244848-b5b908c814479bb5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/244848-f11c2b65063fcbcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/244848-377249e63336d1cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/244848-cb15482e1a81f09c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-10-03T17:03:58.777Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="为什么使用  Cross-Entropy Error ？">
-<meta name="twitter:description" content="在使用神经网络进行分类和预测的时候，使用 Cross Entropy Error 来 evaluate 模型比使用 classification error 和 mean squared error 能取得更好的效果。为什么呢？让我来解释一下。基本的 idea 是非常简单的，但是目前有很多对其 main idea 存在误解的看法。首先说明一下我们正在用一个神经网络模型来进行分类任务，比如通过性别、">
-  <link rel="canonical" href="http://yoursite.com/2018/04/30/why-cross-entropy-error/">
+<meta name="twitter:title" content="命名实体识别： BiLSTM 之上的 CRF 层 - 1">
+<meta name="twitter:description" content="注：本文翻译自 CreateMoMo 个人博客，暂未取得作者授权，仅做学习交流使用，如若侵权，立即删除。点击底部阅读原文可直达原博客。 目录该系列文章将会涉及以下几个方面：  Idea 概述 - 在命名实体识别任务中，为什么要在 BiLSTM模型上添加CRF层？  案例解读 - 通过一个简单的实现来揭示：CRF 层是怎样工作的？  Chainer 实现 BiLSTM+CRF 模型（翻译者会努力用">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/244848-b5b908c814479bb5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  <link rel="canonical" href="http://yoursite.com/2018/10/04/CRF-1/">
 
 
 <script id="page-configurations">
@@ -81,7 +85,7 @@
   };
 </script>
 
-  <title>为什么使用  Cross-Entropy Error ？ | TSW</title>
+  <title>命名实体识别： BiLSTM 之上的 CRF 层 - 1 | TSW</title>
   
 
 
@@ -300,7 +304,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/30/why-cross-entropy-error/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/CRF-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ToSev7en">
@@ -312,7 +316,7 @@
       <meta itemprop="name" content="TSW">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">为什么使用  Cross-Entropy Error ？
+        <h1 class="post-title" itemprop="name headline">命名实体识别： BiLSTM 之上的 CRF 层 - 1
 
           
         </h1>
@@ -328,11 +332,19 @@
                 
               
 
-              <time title="创建时间：2018-04-30 15:08:20 / 修改时间：22:08:29" itemprop="dateCreated datePublished" datetime="2018-04-30T15:08:20+08:00">2018-04-30</time>
+              <time title="创建时间：2018-10-04 00:38:57" itemprop="dateCreated datePublished" datetime="2018-10-04T00:38:57+08:00">2018-10-04</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-04 01:03:58" itemprop="dateModified" datetime="2019-10-04T01:03:58+08:00">2019-10-04</time>
+              </span>
             
           
 
@@ -347,15 +359,65 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在使用神经网络进行分类和预测的时候，使用 Cross Entropy Error 来 evaluate 模型比使用 classification error 和 mean squared error 能取得更好的效果。为什么呢？让我来解释一下。基本的 idea 是非常简单的，但是目前有很多对其 main idea 存在误解的看法。首先说明一下我们正在用一个神经网络模型来进行分类任务，比如通过性别、年龄、年收入等预测一个人的党派属性（属于民主党、共和党或者其他党派）。我们不是在用神经网络进行回归任务（其预测值为数值型），或者一个时间序列的神经网络，又或者是其他的什么神经网络。</p>
-<p>现在假设你有三个训练数据的样本。你的神经网络在输出层使用 softmax 激活函数将输出值转换为概率。假设神经网络的输出值和样本的实际值如下所示：<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string"> computed       </span>|<span class="string">      targets         </span>|<span class="string"> correct? </span>|</span><br><span class="line">|<span class="string"> -------------- </span>|<span class="string">----------------------</span>|<span class="string">----------</span>|<span class="string"> </span></span><br><span class="line">|<span class="string"> 0.3  0.3  0.4  </span>|<span class="string"> 0  0  1 (democrat)   </span>|<span class="string">    yes   </span>|</span><br><span class="line">|<span class="string"> 0.3  0.4  0.3  </span>|<span class="string"> 0  1  0 (republican) </span>|<span class="string">    yes   </span>|</span><br><span class="line">|<span class="string"> 0.1  0.2  0.7  </span>|<span class="string"> 1  0  0 (other)      </span>|<span class="string">     no   </span>|</span><br></pre></td></tr></table></figure></p>
-<p>这个神经网络的分类误差为 $\frac{1}{3} = 0.33$ ，其对应的分类准确率为 $\frac{2}{3}=0.67$ 。注意到这个神经网络仅仅将前两个样本分类正确，在第三个样本上却错的离谱。现在来看看另外一个神经网络：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed       | targets              | correct?</span><br><span class="line">-----------------------------------------------</span><br><span class="line"><span class="number">0.1</span>  <span class="number">0.2</span>  <span class="number">0.7</span>  | <span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span> (democrat)   | yes</span><br><span class="line"><span class="number">0.1</span>  <span class="number">0.7</span>  <span class="number">0.2</span>  | <span class="number">0</span>  <span class="number">1</span>  <span class="number">0</span> (republican) | yes</span><br><span class="line"><span class="number">0.3</span>  <span class="number">0.4</span>  <span class="number">0.3</span>  | <span class="number">1</span>  <span class="number">0</span>  <span class="number">0</span> (other)      | no</span><br></pre></td></tr></table></figure></p>
-<p>这个神经网络的分类误差也是 $\frac{1}{3} = 0.33$ 。但是这个神经网络的表现要比第一个要好，因为它预测正确分类的概率值要大，且对于第三个样本也仅仅是差一点就预测对了，不像第一个预测的那么离谱。由此看来，分类误差是一个很“粗暴”的误差度量指标。</p>
-<p>现在我们看看 cross-entropy error。第一个神经网络对于第一个样本的交叉熵误差为：</p>
-<script type="math/tex; mode=display">-( (ln(0.3)*0) + (ln(0.3)*0) + (ln(0.4)*1) ) = -ln(0.4)</script><p>注意到在这个神经网络分类中，计算有一点“怪异”，因为除了一项以外都是 0 。（网络上几个讲如何计算交叉熵的解释还不错。）所以，第一个神经网络的平均交叉熵误差计算如下：</p>
-<script type="math/tex; mode=display">-(ln(0.4) + ln(0.4) + ln(0.1)) / 3 = 1.38</script><p>第二个神经网络的平均交叉熵误差为：</p>
-<script type="math/tex; mode=display">-(ln(0.7) + ln(0.7) + ln(0.3)) / 3 = 0.64</script><p>Notice that the average cross-entropy error for the second, superior neural network is smaller than the ACE error for the first neural network. The ln() function in cross-entropy takes into account the closeness of a prediction and is a more granular way to compute error.</p>
-<p>本文翻译自:<a href="https://jamesmccaffrey.wordpress.com/2013/11/05/why-you-should-use-cross-entropy-error-instead-of-classification-error-or-mean-squared-error-for-neural-network-classifier-training/" target="_blank" rel="noopener">Why You Should Use Cross-Entropy Error Instead Of Classification Error Or Mean Squared Error For Neural Network Classifier Training</a></p>
+        <p><code>注：本文翻译自 CreateMoMo 个人博客，暂未取得作者授权，仅做学习交流使用，如若侵权，立即删除。点击底部阅读原文可直达原博客。</code></p>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p>该系列文章将会涉及以下几个方面：</p>
+<ul>
+<li><p>Idea 概述 - 在命名实体识别任务中，为什么要在 BiLSTM模型上添加CRF层？</p>
+</li>
+<li><p>案例解读 - 通过一个简单的实现来揭示：CRF 层是怎样工作的？</p>
+</li>
+<li><p>Chainer 实现 BiLSTM+CRF 模型（翻译者会努力用 TensorFlow or PyTorch 来实现一番！）</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>谁适合阅读本系列文章？</strong><br>本系列文章适合 NLP 或其他 AI 相关领域的初学者或者在校学生，希望你们在我的文章中能有所收获。期待有建设性的意见和建议！</p>
+</blockquote>
+<h3 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h3><p>如果你不知道神经网络、CRF 或者其他相关的知识，别担心，我会尽量从直觉上来帮助你来理解它们。唯一需要你知道的是命名实体识别的概念！</p>
+<h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h3><p>对于命名实体识别任务来说，基于神经网络和深度学习的方法越来越流行了。比如在这篇<a href="https://arxiv.org/abs/1603.01360" target="_blank" rel="noopener">Paper</a>中，作者就提出了 BiLSTM-CRF 模型用于命名实体识别任务，文中使用了 word level 和 character level 的 embedding。我将使用这篇文章中的模型来解释模型中 CRF层 是如何工作的 :)  。</p>
+<p>如果你还不了解有关 BiLSTM 和 CRF 的细节的话，只要记住它们不过是命名实体识别模型中两种不同的 Layer 罢了！</p>
+<h4 id="1-1-开始之前"><a href="#1-1-开始之前" class="headerlink" title="1.1 开始之前"></a>1.1 开始之前</h4><p>首先，假设我们的数据集中有两种不同的实体类型：Person（人物） 和 Organization（组织）。那么，实际上，我们便有了五种实体的类别 Label ：</p>
+<ul>
+<li>B-Person</li>
+<li>I-Person</li>
+<li>B-Organization</li>
+<li>I-Organization</li>
+<li>O</li>
+</ul>
+<p>这样的话，假如我们使用 $x$ 代表包含五个单词的句子，$w_0,w_1,w_2,w_3,w_4$。那么，在句子 $x$ 中，$[w_0,w_1]$ 是一个 Person 实体，$[w_3]$ 是一个 Organization 实体，其他的单词我们用 $O$ 表示。</p>
+<h4 id="1-2-BiLSTM-CRF-model"><a href="#1-2-BiLSTM-CRF-model" class="headerlink" title="1.2 BiLSTM-CRF model"></a>1.2 BiLSTM-CRF model</h4><p>在这里我会简要介绍一下 BiLSTM-CRF 模型。</p>
+<p>如下图所示：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/244848-b5b908c814479bb5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<ul>
+<li><p>首先，在句子 $x$ 中的每一个词 $w_i$都对应着一个向量表示，这个向量由字符级别的词嵌入(character embedding)和单词级别的词嵌入(word embedding)共同组成（concat 操作？）。其中，字符级别的词嵌入(character embedding)由随机初始化得到，而单词级别的词嵌入(word embedding)一般来自于预先训练好的 word embedding 文件(word2vec 或者 GloVe)。所有的 embeddings 在训练过程中将会被 fine-tuned。</p>
+</li>
+<li><p>其次，BiLSTM-CRF 模型的输入便是这些词向量，模型的输出是对句子 $x$ 中单词对应的标签类别的预测。尽管了解 BiLSTM 层的细节对于我们来说并不必要，但是为了更加容易的理解  CRF 层，还是有必要知道一下 BiLSTM 层输出结果表示什么意思。</p>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/244848-f11c2b65063fcbcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>如上所示， BiLSTM 层的输出是每个类别的预测分数值。譬如，对于词 $w_0$ 来说，BiLSTM 层的输出为：1.5 (B-Person), 0.9 (I-Person), 0.1 (B-Organization), 0.08 (I-Organization) 和 0.05 (O)。这些分数值将会作为 CRF 层的输入。</p>
+<p>之后，在所有由 BiLSTM 层预测的分数值输入到 CRF 层之后，CRF 便会选择具有最高预测分数值的类别标记序列作为最佳的答案。</p>
+<h4 id="1-3-如果没有-CRF-层会怎么样？"><a href="#1-3-如果没有-CRF-层会怎么样？" class="headerlink" title="1.3 如果没有 CRF 层会怎么样？"></a>1.3 如果没有 CRF 层会怎么样？</h4><p>你可能已经注意到了，假使没有 CRF 层，我们一样可以只训练 LSTM 来进行命名实体识别，流程如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/244848-377249e63336d1cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>因为 BiLSTM 层输出的正是每个单词的在各个类标上的分数值，我们完全可以选择具有最高分数的类标作为单词的命名实体类别标注。</p>
+<p>譬如，对于 $w_0$ 来说， “B-Person” 具有最高的得分（1.5），因而我们可以选择 “B-Person”作为最佳的预测。同理，对于$w_1$，我们可以选择  “I-Person”；对于 $w_2$，我们可以选择  “O”；对于 $w_3$，我们可以选择  “B-Org”；对于 $w_2$，我们可以选择  “O”。</p>
+<p>在这个例子中，尽管我们可以得到句子$x$中各个单词的正确类别标记。但是，有些情况下并不总是如此，看一看这个例子：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/244848-cb15482e1a81f09c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>很显然，沿用上面的方法，我们得到的输出（“I-Organization I-Person” 和 “B-Organization I-Person” ）便显得非常的不合理了，I-Organization 之后竟然会出现 I-Person 的标注！</p>
+<h4 id="1-4-CRF-层能够从训练数据中学习到标注序列的一些“约束”"><a href="#1-4-CRF-层能够从训练数据中学习到标注序列的一些“约束”" class="headerlink" title="1.4 CRF 层能够从训练数据中学习到标注序列的一些“约束”"></a>1.4 CRF 层能够从训练数据中学习到标注序列的一些“约束”</h4><p>The CRF layer could add some constrains to the final predicted labels to ensure they are valid. These constrains can be learned by the CRF layer automatically from the training dataset during the training process.</p>
+<p>CRF 层能够给最终的预测 Labels 添加一些约束来确保其合理有效。在训练过程中，这些约束会被 CRF 层自动学习到。</p>
+<p>这些约束可以是：</p>
+<ul>
+<li>句子中首个单词的 Label 应该是 “B-“ or “O”, 而不会是 “I-“</li>
+<li><p>“B-label1 I-label2 I-label3 I-…”,在这个模式中, label1, label2, label3 … 应该是同一实体的 Label。譬如，“B-Person I-Person” 是合理有效的，但是  “B-Person I-Organization” 便是无效的。</p>
+</li>
+<li><p>“O I-label” 是无效的。命名实体的第一个起始标注应该是 “B-“ 开头的，而不是  “I-“。换一句话说，合理有效的模式应该是  “O B-label”</p>
+</li>
+</ul>
+<p>有了这些必要的约束，出现不合理标注序列的数量将会显著下降！</p>
+<h4 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h4><p>接下来，我将通过分析 CRF 的 Loss Function 来解释 CRF 层如何从训练数据集中学习到上述约束，以及为什么 CRF 能够学习到它们。</p>
+<p>别走开，后续更加精彩！</p>
+<p>参考文献</p>
+<p><a href="https://createmomo.github.io/2017/09/12/CRF_Layer_on_the_Top_of_BiLSTM_1/" target="_blank" rel="noopener">[1] CRF_Layer_on_the_Top_of_BiLSTM_1</a><br><a href="[https://arxiv.org/abs/1603.01360](https://arxiv.org/abs/1603.01360">[2] Lample, G., Ballesteros, M., Subramanian, S., Kawakami, K. and Dyer, C., 2016. Neural architectures for named entity recognition. arXiv preprint arXiv:1603.01360.</a>)</p>
 
     </div>
 
@@ -366,25 +428,14 @@
       
 
       <footer class="post-footer">
-          
-            
-          
-          <div class="post-tags">
-            
-              <a href="/tags/ML/" rel="tag"># ML</a>
-            
-              <a href="/tags/DL/" rel="tag"># DL</a>
-            
-          </div>
-        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2018/04/28/ML&DL-Notes/" rel="next" title="ML & DL 知识点">
-                  <i class="fa fa-chevron-left"></i> ML & DL 知识点
+                <a href="/2018/05/11/DSA-LinkedList/" rel="next" title="链表">
+                  <i class="fa fa-chevron-left"></i> 链表
                 </a>
               
             </div>
@@ -393,8 +444,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2018/04/30/awesome-resources/" rel="prev" title="ML & DL 资源汇总">
-                  ML & DL 资源汇总 <i class="fa fa-chevron-right"></i>
+                <a href="/2018/10/04/CRF-2/" rel="prev" title="命名实体识别：BiLSTM 之上的 CRF 层 - 2">
+                  命名实体识别：BiLSTM 之上的 CRF 层 - 2 <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -442,6 +493,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前置知识"><span class="nav-number">2.</span> <span class="nav-text">前置知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-简介"><span class="nav-number">3.</span> <span class="nav-text">1 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-开始之前"><span class="nav-number">3.1.</span> <span class="nav-text">1.1 开始之前</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-BiLSTM-CRF-model"><span class="nav-number">3.2.</span> <span class="nav-text">1.2 BiLSTM-CRF model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-如果没有-CRF-层会怎么样？"><span class="nav-number">3.3.</span> <span class="nav-text">1.3 如果没有 CRF 层会怎么样？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-CRF-层能够从训练数据中学习到标注序列的一些“约束”"><span class="nav-number">3.4.</span> <span class="nav-text">1.4 CRF 层能够从训练数据中学习到标注序列的一些“约束”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后续"><span class="nav-number">3.5.</span> <span class="nav-text">后续</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 

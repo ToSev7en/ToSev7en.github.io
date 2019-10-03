@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/10/04/CRF-2/</loc>
+    
+    <lastmod>2019-10-03T17:13:39.252Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/06/markdown-mathjax-starter/</loc>
+    
+    <lastmod>2019-10-03T17:11:32.721Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/10/04/CRF-1/</loc>
+    
+    <lastmod>2019-10-03T17:03:58.777Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/about/about.html</loc>
+    
+    <lastmod>2019-10-03T15:27:07.448Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/03/06/LSTM-CRF/</loc>
     
     <lastmod>2019-01-18T12:34:35.806Z</lastmod>
@@ -110,13 +138,6 @@
     <loc>http://yoursite.com/2018/04/18/%08language-modeling-with-n-grams/</loc>
     
     <lastmod>2018-04-18T07:27:09.325Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/06/markdown-mathjax-starter/</loc>
-    
-    <lastmod>2018-04-18T07:26:42.643Z</lastmod>
     
   </url>
   
