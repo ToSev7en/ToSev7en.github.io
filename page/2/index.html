@@ -34,7 +34,7 @@
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     algolia: {
       appID: '',
@@ -355,7 +355,7 @@
       
           <p>在将数据“喂”给机器学习模型之前，我们有必要对原始数据进行预处理。</p>
 <p>One-Hot Encoding 可以将 <code>类别特征</code> 转换为分类和回归算法更易于处理的格式。</p>
-<p><img src="https://i.imgur.com/mtimFxh.png" alt></p>
+<p><img alt data-src="https://i.imgur.com/mtimFxh.png"></p>
 <!-- ![sdsa](https://qph.ec.quoracdn.net/main-qimg-715744b45247794c88f6b68beb744ad4) -->
 <!-- ![](https://qph.ec.quoracdn.net/main-qimg-bea46ccd4bdc05c5feaedc3e341ed426) -->
 <p>[1] <a href="https://www.kaggle.com/dansbecker/using-categorical-data-with-one-hot-encoding" target="_blank" rel="noopener">Using Categorical Data with One Hot Encoding</a></p>
@@ -432,14 +432,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <img src="/2018/04/18/word-window-classification-and-nn/lecture4.jpg">
+          <img data-src="/2018/04/18/word-window-classification-and-nn/lecture4.jpg">
 <h3 id="课程内容概要"><a href="#课程内容概要" class="headerlink" title="#课程内容概要"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>课程内容概要</h3><p>这一节课将会深入了解 NLP 中分类问题。</p>
-<img src="/2018/04/18/word-window-classification-and-nn/overview.jpg">
-<h3 id="分类的定义和符号表示"><a href="#分类的定义和符号表示" class="headerlink" title="#分类的定义和符号表示"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>分类的定义和符号表示</h3><img src="/2018/04/18/word-window-classification-and-nn/classification-notation.jpg">
+<img data-src="/2018/04/18/word-window-classification-and-nn/overview.jpg">
+<h3 id="分类的定义和符号表示"><a href="#分类的定义和符号表示" class="headerlink" title="#分类的定义和符号表示"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>分类的定义和符号表示</h3><img data-src="/2018/04/18/word-window-classification-and-nn/classification-notation.jpg">
 <h3 id="分类的直觉理解"><a href="#分类的直觉理解" class="headerlink" title="#分类的直觉理解"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>分类的直觉理解</h3><p>根据传统的机器学习的“套路”，我们一般使用简单的模型（比如 <code>Logistic Regression</code>）来定义和学习分类问题的决策边界（<code>Decision Boundary</code>），使得模型能够通过这个决策边界区分两个或多个类别。在一般的机器学习流程中，我们一般假定输入是固定的（Fixed），然后只需要训练 $W$ 参数（即 SoftMax 权重），通过给定的输入 $X$ 来计算 $Y$ 的概率。</p>
-<img src="/2018/04/18/word-window-classification-and-nn/classifi-intitution.jpg">
-<h3 id="SoftMax分类器"><a href="#SoftMax分类器" class="headerlink" title="#SoftMax分类器"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>SoftMax分类器</h3><img src="/2018/04/18/word-window-classification-and-nn/softmax.png">
-<h3 id="利用SoftMax和交叉熵误差进行训练"><a href="#利用SoftMax和交叉熵误差进行训练" class="headerlink" title="#利用SoftMax和交叉熵误差进行训练"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>利用SoftMax和交叉熵误差进行训练</h3><img src="/2018/04/18/word-window-classification-and-nn/train-with-cross-entropy.png">
+<img data-src="/2018/04/18/word-window-classification-and-nn/classifi-intitution.jpg">
+<h3 id="SoftMax分类器"><a href="#SoftMax分类器" class="headerlink" title="#SoftMax分类器"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>SoftMax分类器</h3><img data-src="/2018/04/18/word-window-classification-and-nn/softmax.png">
+<h3 id="利用SoftMax和交叉熵误差进行训练"><a href="#利用SoftMax和交叉熵误差进行训练" class="headerlink" title="#利用SoftMax和交叉熵误差进行训练"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>利用SoftMax和交叉熵误差进行训练</h3><img data-src="/2018/04/18/word-window-classification-and-nn/train-with-cross-entropy.png">
 <h3 id="Course-Materials"><a href="#Course-Materials" class="headerlink" title="#Course Materials"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>Course Materials</h3><p><a href="http://web.stanford.edu/class/cs224n/lectures/lecture4.pdf" target="_blank" rel="noopener">[Lecture4 Slide]</a></p>
 
         
@@ -601,14 +601,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Fully-Connected-Layer-全连接层"><a href="#Fully-Connected-Layer-全连接层" class="headerlink" title="Fully Connected Layer 全连接层"></a>Fully Connected Layer 全连接层</h3><img src="/2018/03/06/cnn-convolution-and-pooling/FCLayer.jpg" title="From CS231N">
+          <h3 id="Fully-Connected-Layer-全连接层"><a href="#Fully-Connected-Layer-全连接层" class="headerlink" title="Fully Connected Layer 全连接层"></a>Fully Connected Layer 全连接层</h3><img title="From CS231N" data-src="/2018/03/06/cnn-convolution-and-pooling/FCLayer.jpg">
 <p>32 \( \times \) 32\(\times\)3 image \(\to\) stretch to 3072\(\times\)1</p>
 <h3 id="Convolution-Layer-卷积层"><a href="#Convolution-Layer-卷积层" class="headerlink" title="Convolution Layer 卷积层"></a>Convolution Layer 卷积层</h3><p>卷积层与全连接层的主要差别在于前者可以保全 <em>空间结构</em> (Spatial Structure)。处理一张 32 \( \times \) 32\(\times\)3 的图片，不同于全连接层中将其展开为一维的长向量作为输入，我们在卷积层直接将图片的三维的结构输入，这样我们就可以保持图片的结构。</p>
-<img src="/2018/03/06/cnn-convolution-and-pooling/ConvLayer.jpg" title="From Stanford CS231N">
+<img title="From Stanford CS231N" data-src="/2018/03/06/cnn-convolution-and-pooling/ConvLayer.jpg">
 <p>接下来，我们的权重是一些小的卷积核，例如 5 \( \times \) 5 \(\times\) 3 的大小，我们将把这个卷积核在整个图像上滑动，并计算出在每一个<em>空间定位</em>（Spatial Location）时的 Dot Product。</p>
-<img src="/2018/03/06/cnn-convolution-and-pooling/0-3.gif" title="From Stanford CS231N">
+<img title="From Stanford CS231N" data-src="/2018/03/06/cnn-convolution-and-pooling/0-3.gif">
 <p>首先，我们采用的卷积核总是会将输入量扩展至完全（extend the Full Depth of the input volume）。它们都是很小的空间区域，这里是  5 \( \times \) 5 而不是输入空间的全部大小 32 \( \times \) 32，但是他们通常会遍历所有的RGB通道 ，所以这里我们采用的卷积核的大小为  5 \( \times \) 5 \(\times\) 3 。</p>
-<img src="/2018/03/06/cnn-convolution-and-pooling/ConvFilter.jpg" title="From Stanford CS231N">
+<img title="From Stanford CS231N" data-src="/2018/03/06/cnn-convolution-and-pooling/ConvFilter.jpg">
 
         
       
@@ -723,7 +723,7 @@
 <li><p>其次，BiLSTM-CRF 模型的输入便是这些词向量，模型的输出是对句子 $x$ 中单词对应的标签类别的预测。尽管了解 BiLSTM 层的细节对于我们来说并不必要，但是为了更加容易的理解  CRF 层，还是有必要知道一下 BiLSTM 层输出结果表示什么意思。</p>
 </li>
 </ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/244848-f11c2b65063fcbcb.png" alt></p>
+<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-f11c2b65063fcbcb.png"></p>
 <p>如上所示， BiLSTM 层的输出是每个类别的预测分数值。譬如，对于词 $w_0$ 来说，BiLSTM 层的输出为：1.5 (B-Person), 0.9 (I-Person), 0.1 (B-Organization), 0.08 (I-Organization) 和 0.05 (O)。这些分数值将会作为 CRF 层的输入。</p>
 <p>之后，在所有由 BiLSTM 层预测的分数值输入到 CRF 层之后，CRF 便会选择具有最高预测分数值的类别标记序列作为最佳的答案。</p>
 <h4 id="1-3-如果没有-CRF-层会怎么样？"><a href="#1-3-如果没有-CRF-层会怎么样？" class="headerlink" title="1.3 如果没有 CRF 层会怎么样？"></a>1.3 如果没有 CRF 层会怎么样？</h4><p>你可能已经注意到了，假使没有 CRF 层，我们一样可以只训练 LSTM 来进行命名实体识别，流程如下：</p>
@@ -1367,6 +1367,7 @@ f\left(
   
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/pjax/pjax.min.js?v=0.2.8"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>

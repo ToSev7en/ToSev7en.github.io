@@ -34,7 +34,7 @@
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     algolia: {
       appID: '',
@@ -62,12 +62,10 @@
 <meta property="og:site_name" content="TSW">
 <meta property="og:description" content="注：本文翻译自 CreateMoMo 个人博客，暂未取得作者授权，仅做学习交流使用，如若侵权，立即删除。点击底部阅读原文可直达原博客。 目录该系列文章将会涉及以下几个方面：  Idea 概述 - 在命名实体识别任务中，为什么要在 BiLSTM模型上添加CRF层？  案例解读 - 通过一个简单的实现来揭示：CRF 层是怎样工作的？  Chainer 实现 BiLSTM+CRF 模型（翻译者会努力用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/244848-f11c2b65063fcbcb.png">
 <meta property="og:updated_time" content="2019-01-18T12:34:35.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="命名实体识别: BiLSTM 之上的 CRF 层 - 1">
 <meta name="twitter:description" content="注：本文翻译自 CreateMoMo 个人博客，暂未取得作者授权，仅做学习交流使用，如若侵权，立即删除。点击底部阅读原文可直达原博客。 目录该系列文章将会涉及以下几个方面：  Idea 概述 - 在命名实体识别任务中，为什么要在 BiLSTM模型上添加CRF层？  案例解读 - 通过一个简单的实现来揭示：CRF 层是怎样工作的？  Chainer 实现 BiLSTM+CRF 模型（翻译者会努力用">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/244848-f11c2b65063fcbcb.png">
   <link rel="canonical" href="http://yoursite.com/2018/03/06/LSTM-CRF/">
 
 
@@ -390,7 +388,7 @@
 <li><p>其次，BiLSTM-CRF 模型的输入便是这些词向量，模型的输出是对句子 $x$ 中单词对应的标签类别的预测。尽管了解 BiLSTM 层的细节对于我们来说并不必要，但是为了更加容易的理解  CRF 层，还是有必要知道一下 BiLSTM 层输出结果表示什么意思。</p>
 </li>
 </ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/244848-f11c2b65063fcbcb.png" alt></p>
+<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-f11c2b65063fcbcb.png"></p>
 <p>如上所示， BiLSTM 层的输出是每个类别的预测分数值。譬如，对于词 $w_0$ 来说，BiLSTM 层的输出为：1.5 (B-Person), 0.9 (I-Person), 0.1 (B-Organization), 0.08 (I-Organization) 和 0.05 (O)。这些分数值将会作为 CRF 层的输入。</p>
 <p>之后，在所有由 BiLSTM 层预测的分数值输入到 CRF 层之后，CRF 便会选择具有最高预测分数值的类别标记序列作为最佳的答案。</p>
 <h4 id="1-3-如果没有-CRF-层会怎么样？"><a href="#1-3-如果没有-CRF-层会怎么样？" class="headerlink" title="1.3 如果没有 CRF 层会怎么样？"></a>1.3 如果没有 CRF 层会怎么样？</h4><p>你可能已经注意到了，假使没有 CRF 层，我们一样可以只训练 LSTM 来进行命名实体识别，流程如下：</p>
@@ -607,6 +605,7 @@
   
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/pjax/pjax.min.js?v=0.2.8"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>

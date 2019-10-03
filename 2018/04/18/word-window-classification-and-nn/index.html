@@ -34,7 +34,7 @@
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     algolia: {
       appID: '',
@@ -63,17 +63,10 @@
 <meta property="og:site_name" content="TSW">
 <meta property="og:description" content="#课程内容概要这一节课将会深入了解 NLP 中分类问题。  #分类的定义和符号表示 #分类的直觉理解根据传统的机器学习的“套路”，我们一般使用简单的模型（比如 Logistic Regression）来定义和学习分类问题的决策边界（Decision Boundary），使得模型能够通过这个决策边界区分两个或多个类别。在一般的机器学习流程中，我们一般假定输入是固定的（Fixed），然后只需要训练">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/lecture4.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/overview.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/classification-notation.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/classifi-intitution.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/softmax.png">
-<meta property="og:image" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/train-with-cross-entropy.png">
 <meta property="og:updated_time" content="2018-04-18T08:34:28.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CS224N Lecture 4 - Word Window Classification and NN">
 <meta name="twitter:description" content="#课程内容概要这一节课将会深入了解 NLP 中分类问题。  #分类的定义和符号表示 #分类的直觉理解根据传统的机器学习的“套路”，我们一般使用简单的模型（比如 Logistic Regression）来定义和学习分类问题的决策边界（Decision Boundary），使得模型能够通过这个决策边界区分两个或多个类别。在一般的机器学习流程中，我们一般假定输入是固定的（Fixed），然后只需要训练">
-<meta name="twitter:image" content="http://yoursite.com/2018/04/18/word-window-classification-and-nn/lecture4.jpg">
   <link rel="canonical" href="http://yoursite.com/2018/04/18/word-window-classification-and-nn/">
 
 
@@ -354,14 +347,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <img src="/2018/04/18/word-window-classification-and-nn/lecture4.jpg">
+        <img data-src="/2018/04/18/word-window-classification-and-nn/lecture4.jpg">
 <h3 id="课程内容概要"><a href="#课程内容概要" class="headerlink" title="#课程内容概要"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>课程内容概要</h3><p>这一节课将会深入了解 NLP 中分类问题。</p>
-<img src="/2018/04/18/word-window-classification-and-nn/overview.jpg">
-<h3 id="分类的定义和符号表示"><a href="#分类的定义和符号表示" class="headerlink" title="#分类的定义和符号表示"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>分类的定义和符号表示</h3><img src="/2018/04/18/word-window-classification-and-nn/classification-notation.jpg">
+<img data-src="/2018/04/18/word-window-classification-and-nn/overview.jpg">
+<h3 id="分类的定义和符号表示"><a href="#分类的定义和符号表示" class="headerlink" title="#分类的定义和符号表示"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>分类的定义和符号表示</h3><img data-src="/2018/04/18/word-window-classification-and-nn/classification-notation.jpg">
 <h3 id="分类的直觉理解"><a href="#分类的直觉理解" class="headerlink" title="#分类的直觉理解"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>分类的直觉理解</h3><p>根据传统的机器学习的“套路”，我们一般使用简单的模型（比如 <code>Logistic Regression</code>）来定义和学习分类问题的决策边界（<code>Decision Boundary</code>），使得模型能够通过这个决策边界区分两个或多个类别。在一般的机器学习流程中，我们一般假定输入是固定的（Fixed），然后只需要训练 $W$ 参数（即 SoftMax 权重），通过给定的输入 $X$ 来计算 $Y$ 的概率。</p>
-<img src="/2018/04/18/word-window-classification-and-nn/classifi-intitution.jpg">
-<h3 id="SoftMax分类器"><a href="#SoftMax分类器" class="headerlink" title="#SoftMax分类器"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>SoftMax分类器</h3><img src="/2018/04/18/word-window-classification-and-nn/softmax.png">
-<h3 id="利用SoftMax和交叉熵误差进行训练"><a href="#利用SoftMax和交叉熵误差进行训练" class="headerlink" title="#利用SoftMax和交叉熵误差进行训练"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>利用SoftMax和交叉熵误差进行训练</h3><img src="/2018/04/18/word-window-classification-and-nn/train-with-cross-entropy.png">
+<img data-src="/2018/04/18/word-window-classification-and-nn/classifi-intitution.jpg">
+<h3 id="SoftMax分类器"><a href="#SoftMax分类器" class="headerlink" title="#SoftMax分类器"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>SoftMax分类器</h3><img data-src="/2018/04/18/word-window-classification-and-nn/softmax.png">
+<h3 id="利用SoftMax和交叉熵误差进行训练"><a href="#利用SoftMax和交叉熵误差进行训练" class="headerlink" title="#利用SoftMax和交叉熵误差进行训练"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>利用SoftMax和交叉熵误差进行训练</h3><img data-src="/2018/04/18/word-window-classification-and-nn/train-with-cross-entropy.png">
 <h3 id="Course-Materials"><a href="#Course-Materials" class="headerlink" title="#Course Materials"></a><span style="padding-right: .5em;color: red;font-size: 1.2em">#</span>Course Materials</h3><p><a href="http://web.stanford.edu/class/cs224n/lectures/lecture4.pdf" target="_blank" rel="noopener">[Lecture4 Slide]</a></p>
 
     </div>
@@ -568,6 +561,7 @@
   
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/pjax/pjax.min.js?v=0.2.8"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>

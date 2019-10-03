@@ -34,7 +34,7 @@
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     algolia: {
       appID: '',
@@ -358,7 +358,7 @@
         <p>在 C++ 中，我们通过定义一个 <strong>类（Class）</strong>来定义自己的数据结构。一个<strong>类</strong>定义的一种<strong>数据类型</strong>，以及相关联的一组<strong>操作</strong>。类机制是 C++ 中最重要的特性之一。实际上， C++ 在设计之初的考虑就是能够定义使用上如同内置类型一样自然的 <strong>类类型（Class Type）</strong>。每一个类实际上都定义了一种新的类型，其类型名就是类名。</p>
 <p>类的定义一般放在头文件中，通常使用<code>.h</code>作为头文件的后缀。标准库头文件一般不带后缀。</p>
 <p>对于 <code>#include</code> 指令，包含来自标准库的头文件时，用<strong>尖括号</strong> <code>(&lt;&gt;)</code> 包围头文件名。对于不属于标准库的头文件，则用<strong>双引号</strong> <code>(&quot;&quot;)</code> 包围。</p>
-<p>文件重定向:将标准输入和标准输出与命名文件相关联起来。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> addItem &lt;input_file &gt;output_file</span></span><br></pre></td></tr></table></figure></p>
+<p>文件重定向:将标准输入和标准输出与命名文件相关联起来。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> addItem &lt;input_file &gt;output_file</span><br></pre></td></tr></table></figure></p>
 <p><strong>成员函数（member function）</strong>定义为类的一部分的函数，有时候也被称为方法（Method）。</p>
 <p>点运算符 <code>.</code></p>
 <p>调用运算符 <code>()</code></p>
@@ -561,6 +561,7 @@
   
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/pjax/pjax.min.js?v=0.2.8"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>

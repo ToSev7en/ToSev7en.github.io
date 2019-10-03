@@ -34,7 +34,7 @@
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     algolia: {
       appID: '',
@@ -337,7 +337,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-04 01:13:39" itemprop="dateModified" datetime="2019-10-04T01:13:39+08:00">2019-10-04</time>
+                <time title="修改时间：2019-10-04 01:37:32" itemprop="dateModified" datetime="2019-10-04T01:37:32+08:00">2019-10-04</time>
               </span>
             
           
@@ -367,14 +367,14 @@
 <p>在读完这篇文章后，你将会知道为什么 CRF 能够学习到这些约束。</p>
 <h3 id="2-CRF-Layer"><a href="#2-CRF-Layer" class="headerlink" title="2. CRF Layer"></a>2. CRF Layer</h3><p>在  CRF  层的 Loss Function 中，我们有两种 Score ，Emission Score 和 Transition Score 它们是 CRF  层的关键。</p>
 <h4 id="2-1-Emission-Score"><a href="#2-1-Emission-Score" class="headerlink" title="2.1 Emission Score"></a>2.1 Emission Score</h4><p>第一个便是 Emission Score 。这里的 Emission Scores 来自于 BiLSTM 层，如下图所示，$w_0$被标记为 B-Person  的 score 是 1.5</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/244848-e77acaa15e0c6d77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-e77acaa15e0c6d77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 <p>为了方便理解，在这里给每个 label 一个索引标签：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/244848-f85dce456924c800.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-f85dce456924c800.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 <p>我们使用$x<em>{i,y_j}$表示 Emission Score，$i$ 是 word 的 index，$y_j$ 是 label 的 index。譬如，依据上面的图可以得到，$x</em>{i=1,y<em>j=2} = x</em>{w1, B-Organization} = 0.1$, 意思就是$w_1$被标注为 B-Organization 的 score 为 0.1。</p>
-<h4 id="2-2-Transition-Score"><a href="#2-2-Transition-Score" class="headerlink" title="2.2 Transition Score"></a>2.2 Transition Score</h4><p>对于 Transition Score ，我们使用$t<em>{y_jy_j}$表示。譬如，$t</em>{B-Persion, I-Person} = 0.9$，意思就是标签 B-Persion 转移到 I-Person 的 score 为 0.9。这样的话，我们便拥有了一个 转移矩阵，其中存储着所有标签之间的 Transition Score。</p>
+<h4 id="2-2-Transition-Score"><a href="#2-2-Transition-Score" class="headerlink" title="2.2 Transition Score"></a>2.2 Transition Score</h4><p>对于 Transition Score ，我们使用$t<em>{y_jy_j}$ 表示。譬如，$ t</em>{B-Persion, I-Person} = 0.9 $，意思就是标签 B-Persion 转移到 I-Person 的 score 为 0.9。这样的话，我们便拥有了一个 转移矩阵，其中存储着所有标签之间的 Transition Score。</p>
 <p>为了使得转移分数矩阵更加具有鲁棒性，我们得添加一些标签，START 和 END。START 表示句子的起始，并不是句子的第一个 word；END 表示句子的结束。</p>
 <p>这里就是一个 transition matrix score 的例子，其中包含了我们额外添加的START 和 END 标签。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/244848-18095c2c0968bf34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-18095c2c0968bf34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 <p>如上表所示，我们能够发现这个状态转移举证已经学习到了某些约束了。</p>
 <ul>
 <li><p>句子中的第一个单词的标记应该是以“B-“ 或者 “O”开头, 并不会是 “I-”形式的标记。（可以从表中发现， “START” 到 “I-Person or I-Organization” 的转移值非常的小。）</p>
@@ -388,7 +388,7 @@
 <p>确切的说，这个矩阵是 BiLSTM-CRF 模型的一个参数。在你训练模型之前，你可以随机地初始化矩阵中所有的 transition score。在之后的训练过程中，这些随机初始化的 score 将会被自动更新。换句话说，CRF 层可以自己学习到这些约束。我们并不需要手动创建这样一个矩阵。这些分数值会随着训练的迭代次数的增加，变得越来越 “合理”。</p>
 <h4 id="2-3-CRF-loss-function"><a href="#2-3-CRF-loss-function" class="headerlink" title="2.3 CRF loss function"></a>2.3 CRF loss function</h4><p>CRF 的损失函数由 真实转移路径值 和 所有可能转移路径值两部分组成。真实路径表示在所有可能转移路径中具有最高 score 的路径。</p>
 <p>假如我们的数据集中有这样一些标记：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/244848-2c188c8d806ace11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img alt="image.png" data-src="https://upload-images.jianshu.io/upload_images/244848-2c188c8d806ace11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 <p>我们也有一个由 5 个单词组成的句子，那么标签的可能转移路径有：</p>
 <p>1.START B-Person B-Person B-Person B-Person B-Person END</p>
 <p>2.START B-Person I-Person B-Person B-Person B-Person END<br>…<br>10.START B-Person I-Person O B-Organization O END<br>…<br>N.O O O O O O O</p>
@@ -510,22 +510,22 @@
 <p>这样的话，假如我们使用 $x$ 代表包含五个单词的句子，$w_0,w_1,w_2,w_3,w_4$。那么，在句子 $x$ 中，$[w_0,w_1]$ 是一个 Person 实体，$[w_3]$ 是一个 Organization 实体，其他的单词我们用 $O$ 表示。</p>
 <h4 id="1-2-BiLSTM-CRF-model"><a href="#1-2-BiLSTM-CRF-model" class="headerlink" title="1.2 BiLSTM-CRF model"></a>1.2 BiLSTM-CRF model</h4><p>在这里我会简要介绍一下 BiLSTM-CRF 模型。</p>
 <p>如下图所示：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/244848-b5b908c814479bb5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-b5b908c814479bb5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 <ul>
 <li><p>首先，在句子 $x$ 中的每一个词 $w_i$都对应着一个向量表示，这个向量由字符级别的词嵌入(character embedding)和单词级别的词嵌入(word embedding)共同组成（concat 操作？）。其中，字符级别的词嵌入(character embedding)由随机初始化得到，而单词级别的词嵌入(word embedding)一般来自于预先训练好的 word embedding 文件(word2vec 或者 GloVe)。所有的 embeddings 在训练过程中将会被 fine-tuned。</p>
 </li>
 <li><p>其次，BiLSTM-CRF 模型的输入便是这些词向量，模型的输出是对句子 $x$ 中单词对应的标签类别的预测。尽管了解 BiLSTM 层的细节对于我们来说并不必要，但是为了更加容易的理解  CRF 层，还是有必要知道一下 BiLSTM 层输出结果表示什么意思。</p>
 </li>
 </ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/244848-f11c2b65063fcbcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-f11c2b65063fcbcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 <p>如上所示， BiLSTM 层的输出是每个类别的预测分数值。譬如，对于词 $w_0$ 来说，BiLSTM 层的输出为：1.5 (B-Person), 0.9 (I-Person), 0.1 (B-Organization), 0.08 (I-Organization) 和 0.05 (O)。这些分数值将会作为 CRF 层的输入。</p>
 <p>之后，在所有由 BiLSTM 层预测的分数值输入到 CRF 层之后，CRF 便会选择具有最高预测分数值的类别标记序列作为最佳的答案。</p>
 <h4 id="1-3-如果没有-CRF-层会怎么样？"><a href="#1-3-如果没有-CRF-层会怎么样？" class="headerlink" title="1.3 如果没有 CRF 层会怎么样？"></a>1.3 如果没有 CRF 层会怎么样？</h4><p>你可能已经注意到了，假使没有 CRF 层，我们一样可以只训练 LSTM 来进行命名实体识别，流程如下：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/244848-377249e63336d1cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-377249e63336d1cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 <p>因为 BiLSTM 层输出的正是每个单词的在各个类标上的分数值，我们完全可以选择具有最高分数的类标作为单词的命名实体类别标注。</p>
 <p>譬如，对于 $w_0$ 来说， “B-Person” 具有最高的得分（1.5），因而我们可以选择 “B-Person”作为最佳的预测。同理，对于$w_1$，我们可以选择  “I-Person”；对于 $w_2$，我们可以选择  “O”；对于 $w_3$，我们可以选择  “B-Org”；对于 $w_2$，我们可以选择  “O”。</p>
 <p>在这个例子中，尽管我们可以得到句子$x$中各个单词的正确类别标记。但是，有些情况下并不总是如此，看一看这个例子：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/244848-cb15482e1a81f09c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-cb15482e1a81f09c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 <p>很显然，沿用上面的方法，我们得到的输出（“I-Organization I-Person” 和 “B-Organization I-Person” ）便显得非常的不合理了，I-Organization 之后竟然会出现 I-Person 的标注！</p>
 <h4 id="1-4-CRF-层能够从训练数据中学习到标注序列的一些“约束”"><a href="#1-4-CRF-层能够从训练数据中学习到标注序列的一些“约束”" class="headerlink" title="1.4 CRF 层能够从训练数据中学习到标注序列的一些“约束”"></a>1.4 CRF 层能够从训练数据中学习到标注序列的一些“约束”</h4><p>The CRF layer could add some constrains to the final predicted labels to ensure they are valid. These constrains can be learned by the CRF layer automatically from the training dataset during the training process.</p>
 <p>CRF 层能够给最终的预测 Labels 添加一些约束来确保其合理有效。在训练过程中，这些约束会被 CRF 层自动学习到。</p>
@@ -875,7 +875,7 @@
           <p>在 C++ 中，我们通过定义一个 <strong>类（Class）</strong>来定义自己的数据结构。一个<strong>类</strong>定义的一种<strong>数据类型</strong>，以及相关联的一组<strong>操作</strong>。类机制是 C++ 中最重要的特性之一。实际上， C++ 在设计之初的考虑就是能够定义使用上如同内置类型一样自然的 <strong>类类型（Class Type）</strong>。每一个类实际上都定义了一种新的类型，其类型名就是类名。</p>
 <p>类的定义一般放在头文件中，通常使用<code>.h</code>作为头文件的后缀。标准库头文件一般不带后缀。</p>
 <p>对于 <code>#include</code> 指令，包含来自标准库的头文件时，用<strong>尖括号</strong> <code>(&lt;&gt;)</code> 包围头文件名。对于不属于标准库的头文件，则用<strong>双引号</strong> <code>(&quot;&quot;)</code> 包围。</p>
-<p>文件重定向:将标准输入和标准输出与命名文件相关联起来。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> addItem &lt;input_file &gt;output_file</span></span><br></pre></td></tr></table></figure></p>
+<p>文件重定向:将标准输入和标准输出与命名文件相关联起来。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> addItem &lt;input_file &gt;output_file</span><br></pre></td></tr></table></figure></p>
 <p><strong>成员函数（member function）</strong>定义为类的一部分的函数，有时候也被称为方法（Method）。</p>
 <p>点运算符 <code>.</code></p>
 <p>调用运算符 <code>()</code></p>
@@ -1370,6 +1370,7 @@
   
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/pjax/pjax.min.js?v=0.2.8"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>

@@ -34,7 +34,7 @@
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     algolia: {
       appID: '',
@@ -62,15 +62,10 @@
 <meta property="og:site_name" content="TSW">
 <meta property="og:description" content="注：本文翻译自 CreateMoMo 个人博客，暂未取得作者授权，仅做学习交流使用，如若侵权，立即删除。点击底部阅读原文可直达原博客。 目录该系列文章将会涉及以下几个方面：  Idea 概述 - 在命名实体识别任务中，为什么要在 BiLSTM模型上添加CRF层？  案例解读 - 通过一个简单的实现来揭示：CRF 层是怎样工作的？  Chainer 实现 BiLSTM+CRF 模型（翻译者会努力用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/244848-b5b908c814479bb5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/244848-f11c2b65063fcbcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/244848-377249e63336d1cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/244848-cb15482e1a81f09c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2019-10-03T17:03:58.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="命名实体识别： BiLSTM 之上的 CRF 层 - 1">
 <meta name="twitter:description" content="注：本文翻译自 CreateMoMo 个人博客，暂未取得作者授权，仅做学习交流使用，如若侵权，立即删除。点击底部阅读原文可直达原博客。 目录该系列文章将会涉及以下几个方面：  Idea 概述 - 在命名实体识别任务中，为什么要在 BiLSTM模型上添加CRF层？  案例解读 - 通过一个简单的实现来揭示：CRF 层是怎样工作的？  Chainer 实现 BiLSTM+CRF 模型（翻译者会努力用">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/244848-b5b908c814479bb5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   <link rel="canonical" href="http://yoursite.com/2018/10/04/CRF-1/">
 
 
@@ -386,22 +381,22 @@
 <p>这样的话，假如我们使用 $x$ 代表包含五个单词的句子，$w_0,w_1,w_2,w_3,w_4$。那么，在句子 $x$ 中，$[w_0,w_1]$ 是一个 Person 实体，$[w_3]$ 是一个 Organization 实体，其他的单词我们用 $O$ 表示。</p>
 <h4 id="1-2-BiLSTM-CRF-model"><a href="#1-2-BiLSTM-CRF-model" class="headerlink" title="1.2 BiLSTM-CRF model"></a>1.2 BiLSTM-CRF model</h4><p>在这里我会简要介绍一下 BiLSTM-CRF 模型。</p>
 <p>如下图所示：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/244848-b5b908c814479bb5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-b5b908c814479bb5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 <ul>
 <li><p>首先，在句子 $x$ 中的每一个词 $w_i$都对应着一个向量表示，这个向量由字符级别的词嵌入(character embedding)和单词级别的词嵌入(word embedding)共同组成（concat 操作？）。其中，字符级别的词嵌入(character embedding)由随机初始化得到，而单词级别的词嵌入(word embedding)一般来自于预先训练好的 word embedding 文件(word2vec 或者 GloVe)。所有的 embeddings 在训练过程中将会被 fine-tuned。</p>
 </li>
 <li><p>其次，BiLSTM-CRF 模型的输入便是这些词向量，模型的输出是对句子 $x$ 中单词对应的标签类别的预测。尽管了解 BiLSTM 层的细节对于我们来说并不必要，但是为了更加容易的理解  CRF 层，还是有必要知道一下 BiLSTM 层输出结果表示什么意思。</p>
 </li>
 </ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/244848-f11c2b65063fcbcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-f11c2b65063fcbcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 <p>如上所示， BiLSTM 层的输出是每个类别的预测分数值。譬如，对于词 $w_0$ 来说，BiLSTM 层的输出为：1.5 (B-Person), 0.9 (I-Person), 0.1 (B-Organization), 0.08 (I-Organization) 和 0.05 (O)。这些分数值将会作为 CRF 层的输入。</p>
 <p>之后，在所有由 BiLSTM 层预测的分数值输入到 CRF 层之后，CRF 便会选择具有最高预测分数值的类别标记序列作为最佳的答案。</p>
 <h4 id="1-3-如果没有-CRF-层会怎么样？"><a href="#1-3-如果没有-CRF-层会怎么样？" class="headerlink" title="1.3 如果没有 CRF 层会怎么样？"></a>1.3 如果没有 CRF 层会怎么样？</h4><p>你可能已经注意到了，假使没有 CRF 层，我们一样可以只训练 LSTM 来进行命名实体识别，流程如下：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/244848-377249e63336d1cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-377249e63336d1cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 <p>因为 BiLSTM 层输出的正是每个单词的在各个类标上的分数值，我们完全可以选择具有最高分数的类标作为单词的命名实体类别标注。</p>
 <p>譬如，对于 $w_0$ 来说， “B-Person” 具有最高的得分（1.5），因而我们可以选择 “B-Person”作为最佳的预测。同理，对于$w_1$，我们可以选择  “I-Person”；对于 $w_2$，我们可以选择  “O”；对于 $w_3$，我们可以选择  “B-Org”；对于 $w_2$，我们可以选择  “O”。</p>
 <p>在这个例子中，尽管我们可以得到句子$x$中各个单词的正确类别标记。但是，有些情况下并不总是如此，看一看这个例子：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/244848-cb15482e1a81f09c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-cb15482e1a81f09c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 <p>很显然，沿用上面的方法，我们得到的输出（“I-Organization I-Person” 和 “B-Organization I-Person” ）便显得非常的不合理了，I-Organization 之后竟然会出现 I-Person 的标注！</p>
 <h4 id="1-4-CRF-层能够从训练数据中学习到标注序列的一些“约束”"><a href="#1-4-CRF-层能够从训练数据中学习到标注序列的一些“约束”" class="headerlink" title="1.4 CRF 层能够从训练数据中学习到标注序列的一些“约束”"></a>1.4 CRF 层能够从训练数据中学习到标注序列的一些“约束”</h4><p>The CRF layer could add some constrains to the final predicted labels to ensure they are valid. These constrains can be learned by the CRF layer automatically from the training dataset during the training process.</p>
 <p>CRF 层能够给最终的预测 Labels 添加一些约束来确保其合理有效。在训练过程中，这些约束会被 CRF 层自动学习到。</p>
@@ -610,6 +605,7 @@
   
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/pjax/pjax.min.js?v=0.2.8"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>

@@ -34,7 +34,7 @@
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
-    lazyload: false,
+    lazyload: true,
     pangu: false,
     algolia: {
       appID: '',
@@ -63,15 +63,10 @@
 <meta property="og:site_name" content="TSW">
 <meta property="og:description" content="Fully Connected Layer 全连接层 32 \( \times \) 32\(\times\)3 image \(\to\) stretch to 3072\(\times\)1 Convolution Layer 卷积层卷积层与全连接层的主要差别在于前者可以保全 空间结构 (Spatial Structure)。处理一张 32 \( \times \) 32\(\times\)3">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/FCLayer.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/ConvLayer.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/0-3.gif">
-<meta property="og:image" content="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/ConvFilter.jpg">
 <meta property="og:updated_time" content="2018-05-06T07:03:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CS231n笔记14 - 卷积神经网络 - 卷积和池化">
 <meta name="twitter:description" content="Fully Connected Layer 全连接层 32 \( \times \) 32\(\times\)3 image \(\to\) stretch to 3072\(\times\)1 Convolution Layer 卷积层卷积层与全连接层的主要差别在于前者可以保全 空间结构 (Spatial Structure)。处理一张 32 \( \times \) 32\(\times\)3">
-<meta name="twitter:image" content="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/FCLayer.jpg">
   <link rel="canonical" href="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/">
 
 
@@ -360,14 +355,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="Fully-Connected-Layer-全连接层"><a href="#Fully-Connected-Layer-全连接层" class="headerlink" title="Fully Connected Layer 全连接层"></a>Fully Connected Layer 全连接层</h3><img src="/2018/03/06/cnn-convolution-and-pooling/FCLayer.jpg" title="From CS231N">
+        <h3 id="Fully-Connected-Layer-全连接层"><a href="#Fully-Connected-Layer-全连接层" class="headerlink" title="Fully Connected Layer 全连接层"></a>Fully Connected Layer 全连接层</h3><img title="From CS231N" data-src="/2018/03/06/cnn-convolution-and-pooling/FCLayer.jpg">
 <p>32 \( \times \) 32\(\times\)3 image \(\to\) stretch to 3072\(\times\)1</p>
 <h3 id="Convolution-Layer-卷积层"><a href="#Convolution-Layer-卷积层" class="headerlink" title="Convolution Layer 卷积层"></a>Convolution Layer 卷积层</h3><p>卷积层与全连接层的主要差别在于前者可以保全 <em>空间结构</em> (Spatial Structure)。处理一张 32 \( \times \) 32\(\times\)3 的图片，不同于全连接层中将其展开为一维的长向量作为输入，我们在卷积层直接将图片的三维的结构输入，这样我们就可以保持图片的结构。</p>
-<img src="/2018/03/06/cnn-convolution-and-pooling/ConvLayer.jpg" title="From Stanford CS231N">
+<img title="From Stanford CS231N" data-src="/2018/03/06/cnn-convolution-and-pooling/ConvLayer.jpg">
 <p>接下来，我们的权重是一些小的卷积核，例如 5 \( \times \) 5 \(\times\) 3 的大小，我们将把这个卷积核在整个图像上滑动，并计算出在每一个<em>空间定位</em>（Spatial Location）时的 Dot Product。</p>
-<img src="/2018/03/06/cnn-convolution-and-pooling/0-3.gif" title="From Stanford CS231N">
+<img title="From Stanford CS231N" data-src="/2018/03/06/cnn-convolution-and-pooling/0-3.gif">
 <p>首先，我们采用的卷积核总是会将输入量扩展至完全（extend the Full Depth of the input volume）。它们都是很小的空间区域，这里是  5 \( \times \) 5 而不是输入空间的全部大小 32 \( \times \) 32，但是他们通常会遍历所有的RGB通道 ，所以这里我们采用的卷积核的大小为  5 \( \times \) 5 \(\times\) 3 。</p>
-<img src="/2018/03/06/cnn-convolution-and-pooling/ConvFilter.jpg" title="From Stanford CS231N">
+<img title="From Stanford CS231N" data-src="/2018/03/06/cnn-convolution-and-pooling/ConvFilter.jpg">
 
     </div>
 
@@ -573,6 +568,7 @@
   
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/pjax/pjax.min.js?v=0.2.8"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
