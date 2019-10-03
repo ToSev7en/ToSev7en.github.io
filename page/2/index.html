@@ -29,7 +29,7 @@
     version: '7.4.1',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
@@ -58,14 +58,14 @@
   <meta name="description" content="人生如逆旅，我亦是行人。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="TSW">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:url" content="https://tosev7en.github.io/page/2/index.html">
 <meta property="og:site_name" content="TSW">
 <meta property="og:description" content="人生如逆旅，我亦是行人。">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TSW">
 <meta name="twitter:description" content="人生如逆旅，我亦是行人。">
-  <link rel="canonical" href="http://yoursite.com/page/2/">
+  <link rel="canonical" href="https://tosev7en.github.io/page/2/">
 
 
 <script id="page-configurations">
@@ -130,6 +130,8 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+        <p class="site-subtitle">ABC</p>
+      
   </div>
 
   <div class="site-nav-toggle">
@@ -204,7 +206,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">12</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">13</span></a>
 
   </li>
       
@@ -248,7 +250,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">20</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">21</span></a>
 
   </li>
       
@@ -282,6 +284,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 
     <main id="main" class="main">
@@ -297,7 +300,89 @@
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/understanding-one-hot-encoding/">
+    <link itemprop="mainEntityOfPage" href="https://tosev7en.github.io/2018/04/28/ML&DL-Notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ToSev7en">
+      <meta itemprop="description" content="人生如逆旅，我亦是行人。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TSW">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2018/04/28/ML&DL-Notes/" class="post-title-link" itemprop="url">ML & DL 知识点</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018-04-28 14:11:20" itemprop="dateCreated datePublished" datetime="2018-04-28T14:11:20+08:00">2018-04-28</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-04-30 12:22:53" itemprop="dateModified" datetime="2018-04-30T12:22:53+08:00">2018-04-30</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>梯度消失</p>
+<p>梯度爆炸</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://tosev7en.github.io/2018/04/28/understanding-one-hot-encoding/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ToSev7en">
@@ -337,7 +422,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-01-18 20:18:07" itemprop="dateModified" datetime="2019-01-18T20:18:07+08:00">2019-01-18</time>
+                <time title="修改时间：2019-10-04 02:43:03" itemprop="dateModified" datetime="2019-10-04T02:43:03+08:00">2019-10-04</time>
               </span>
             
           
@@ -355,12 +440,11 @@
       
           <p>在将数据“喂”给机器学习模型之前，我们有必要对原始数据进行预处理。</p>
 <p>One-Hot Encoding 可以将 <code>类别特征</code> 转换为分类和回归算法更易于处理的格式。</p>
-<p><img alt data-src="https://i.imgur.com/mtimFxh.png"></p>
+<!-- ![](https://i.imgur.com/mtimFxh.png) -->
 <!-- ![sdsa](https://qph.ec.quoracdn.net/main-qimg-715744b45247794c88f6b68beb744ad4) -->
 <!-- ![](https://qph.ec.quoracdn.net/main-qimg-bea46ccd4bdc05c5feaedc3e341ed426) -->
 <p>[1] <a href="https://www.kaggle.com/dansbecker/using-categorical-data-with-one-hot-encoding" target="_blank" rel="noopener">Using Categorical Data with One Hot Encoding</a></p>
 <!-- <span class='quora-content-embed' data-name='What-is-one-hot-encoding-and-when-is-it-used-in-data-science/answer/Håkon-Hapnes-Strand'>Read <a class='quora-content-link' data-width='560' data-height='260' href='https://www.quora.com/What-is-one-hot-encoding-and-when-is-it-used-in-data-science/answer/Håkon-Hapnes-Strand' data-type='answer' data-id='31598314' data-key='85f0b4c60f0cdc8fb55f987152db61b2' load-full-answer='False' data-embed='aarbgmk'><a href='https://www.quora.com/Håkon-Hapnes-Strand'>Håkon Hapnes Strand</a>&#039;s <a href='/What-is-one-hot-encoding-and-when-is-it-used-in-data-science#ans31598314'>answer</a> to <a href='/What-is-one-hot-encoding-and-when-is-it-used-in-data-science' ref='canonical'><span class="rendered_qtext">What is one hot encoding and when is it used in data science?</span></a></a> on <a href='https://www.quora.com'>Quora</a><script type="text/javascript" src="https://www.quora.com/widgets/content"></script></span> -->
-
         
       
     </div>
@@ -384,7 +468,7 @@
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/18/word-window-classification-and-nn/">
+    <link itemprop="mainEntityOfPage" href="https://tosev7en.github.io/2018/04/18/word-window-classification-and-nn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ToSev7en">
@@ -465,7 +549,7 @@
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/18/language-modeling-with-n-grams/">
+    <link itemprop="mainEntityOfPage" href="https://tosev7en.github.io/2018/04/18/language-modeling-with-n-grams/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ToSev7en">
@@ -545,7 +629,7 @@
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/">
+    <link itemprop="mainEntityOfPage" href="https://tosev7en.github.io/2018/03/06/cnn-convolution-and-pooling/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ToSev7en">
@@ -633,7 +717,7 @@
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/LSTM-CRF/">
+    <link itemprop="mainEntityOfPage" href="https://tosev7en.github.io/2018/03/06/LSTM-CRF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ToSev7en">
@@ -772,7 +856,7 @@
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/hmm-model/">
+    <link itemprop="mainEntityOfPage" href="https://tosev7en.github.io/2018/03/06/hmm-model/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ToSev7en">
@@ -853,7 +937,7 @@
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/markdown-mathjax-starter/">
+    <link itemprop="mainEntityOfPage" href="https://tosev7en.github.io/2018/03/06/markdown-mathjax-starter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ToSev7en">
@@ -893,7 +977,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-04 01:11:32" itemprop="dateModified" datetime="2019-10-04T01:11:32+08:00">2019-10-04</time>
+                <time title="修改时间：2019-10-04 01:46:26" itemprop="dateModified" datetime="2019-10-04T01:46:26+08:00">2019-10-04</time>
               </span>
             
           
@@ -981,7 +1065,7 @@ f\left(
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/machine-learning-glossary/">
+    <link itemprop="mainEntityOfPage" href="https://tosev7en.github.io/2018/03/06/machine-learning-glossary/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ToSev7en">
@@ -1065,7 +1149,7 @@ f\left(
   
   
   <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/03/bag-of-words-model/">
+    <link itemprop="mainEntityOfPage" href="https://tosev7en.github.io/2018/03/03/bag-of-words-model/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ToSev7en">
@@ -1141,88 +1225,11 @@ f\left(
   </article>
 
     
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/03/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ToSev7en">
-      <meta itemprop="description" content="人生如逆旅，我亦是行人。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TSW">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2018/03/03/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2018-03-03 11:40:13" itemprop="dateCreated datePublished" datetime="2018-03-03T11:40:13+08:00">2018-03-03</time>
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1266,7 +1273,7 @@ f\left(
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1279,7 +1286,7 @@ f\left(
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1452,30 +1459,6 @@ window.addEventListener('pjax:success', () => {
 
   
 
-  
-    
-      
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
   
     
       

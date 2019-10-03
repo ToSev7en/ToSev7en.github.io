@@ -2,161 +2,168 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2018/10/04/CRF-2/</loc>
+    <loc>https://tosev7en.github.io/2018/04/28/understanding-one-hot-encoding/</loc>
     
-    <lastmod>2019-10-03T17:37:32.630Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/06/markdown-mathjax-starter/</loc>
-    
-    <lastmod>2019-10-03T17:11:32.721Z</lastmod>
+    <lastmod>2019-10-03T18:43:03.640Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/10/04/CRF-1/</loc>
+    <loc>https://tosev7en.github.io/about/index.html</loc>
     
-    <lastmod>2019-10-03T17:03:58.777Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about/about.html</loc>
-    
-    <lastmod>2019-10-03T15:27:07.448Z</lastmod>
+    <lastmod>2019-10-03T18:27:50.224Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/03/06/LSTM-CRF/</loc>
+    <loc>https://tosev7en.github.io/2018/10/04/CRF-2/</loc>
+    
+    <lastmod>2019-10-03T18:20:03.697Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tosev7en.github.io/2018/10/04/CRF-1/</loc>
+    
+    <lastmod>2019-10-03T18:18:51.582Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tosev7en.github.io/2019/10/04/BatchNorm/</loc>
+    
+    <lastmod>2019-10-03T18:17:58.807Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tosev7en.github.io/2018/03/06/markdown-mathjax-starter/</loc>
+    
+    <lastmod>2019-10-03T17:46:26.722Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tosev7en.github.io/2018/03/06/LSTM-CRF/</loc>
     
     <lastmod>2019-01-18T12:34:35.806Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/04/28/understanding-one-hot-encoding/</loc>
-    
-    <lastmod>2019-01-18T12:18:07.957Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/05/11/DSA-LinkedList/</loc>
+    <loc>https://tosev7en.github.io/2018/05/11/DSA-LinkedList/</loc>
     
     <lastmod>2018-05-12T08:42:28.887Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/05/04/cpp-primer-notes-02/</loc>
+    <loc>https://tosev7en.github.io/2018/05/04/cpp-primer-notes-02/</loc>
     
     <lastmod>2018-05-06T07:03:43.180Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/</loc>
+    <loc>https://tosev7en.github.io/2018/03/06/cnn-convolution-and-pooling/</loc>
     
     <lastmod>2018-05-06T07:03:36.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/05/05/cpp-primer-notes-03/</loc>
+    <loc>https://tosev7en.github.io/2018/05/05/cpp-primer-notes-03/</loc>
     
     <lastmod>2018-05-05T07:32:07.276Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/05/04/cpp-primer-notes-01/</loc>
+    <loc>https://tosev7en.github.io/2018/05/04/cpp-primer-notes-01/</loc>
     
     <lastmod>2018-05-05T04:29:29.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/05/01/From-Frequency-to-Meaning-Vector-Space-Models-of-Semantics/</loc>
+    <loc>https://tosev7en.github.io/2018/05/01/From-Frequency-to-Meaning-Vector-Space-Models-of-Semantics/</loc>
     
     <lastmod>2018-05-01T14:25:46.164Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/04/30/awesome-resources/</loc>
+    <loc>https://tosev7en.github.io/2018/04/30/awesome-resources/</loc>
     
     <lastmod>2018-05-01T12:10:18.006Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/04/30/why-cross-entropy-error/</loc>
+    <loc>https://tosev7en.github.io/2018/04/30/why-cross-entropy-error/</loc>
     
     <lastmod>2018-04-30T14:08:29.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/04/28/ML&DL-Notes/</loc>
+    <loc>https://tosev7en.github.io/2018/04/28/ML&DL-Notes/</loc>
     
     <lastmod>2018-04-30T04:22:53.959Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/03/06/hmm-model/</loc>
+    <loc>https://tosev7en.github.io/2018/03/06/hmm-model/</loc>
     
     <lastmod>2018-04-29T08:19:15.203Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/04/18/word-window-classification-and-nn/</loc>
+    <loc>https://tosev7en.github.io/2018/04/18/word-window-classification-and-nn/</loc>
     
     <lastmod>2018-04-18T08:34:28.843Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/03/06/machine-learning-glossary/</loc>
+    <loc>https://tosev7en.github.io/2018/03/06/machine-learning-glossary/</loc>
     
     <lastmod>2018-04-18T07:57:19.699Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/03/03/bag-of-words-model/</loc>
+    <loc>https://tosev7en.github.io/2018/03/03/bag-of-words-model/</loc>
     
     <lastmod>2018-04-18T07:27:51.460Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/04/18/%08language-modeling-with-n-grams/</loc>
+    <loc>https://tosev7en.github.io/2018/04/18/%08language-modeling-with-n-grams/</loc>
     
     <lastmod>2018-04-18T07:27:09.325Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
+    <loc>https://tosev7en.github.io/tags/index.html</loc>
     
     <lastmod>2018-04-18T06:11:33.077Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/projects/index.html</loc>
+    <loc>https://tosev7en.github.io/projects/index.html</loc>
     
     <lastmod>2018-03-03T06:46:05.356Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/03/03/hello-world/</loc>
+    <loc>https://tosev7en.github.io/2018/03/03/hello-world/</loc>
     
     <lastmod>2018-03-03T03:40:13.387Z</lastmod>
     

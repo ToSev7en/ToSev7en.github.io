@@ -55,19 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="在 上一篇文章 中, 我们了解到 CRF 能够从训练数据中学习到有关 Labels 序列的约束，进而可以确保最终的实体标注序列是合理有效的。">
-<meta name="keywords" content="CRF">
+  <meta name="description" content="$x_1 + y_2 = 120$">
+<meta name="keywords" content="BN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="命名实体识别：BiLSTM 之上的 CRF 层 - 2">
-<meta property="og:url" content="https://tosev7en.github.io/2018/10/04/CRF-2/index.html">
+<meta property="og:title" content="BatchNorm">
+<meta property="og:url" content="https://tosev7en.github.io/2019/10/04/BatchNorm/index.html">
 <meta property="og:site_name" content="TSW">
-<meta property="og:description" content="在 上一篇文章 中, 我们了解到 CRF 能够从训练数据中学习到有关 Labels 序列的约束，进而可以确保最终的实体标注序列是合理有效的。">
+<meta property="og:description" content="$x_1 + y_2 = 120$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-03T18:20:03.697Z">
+<meta property="og:updated_time" content="2019-10-03T18:17:58.807Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="命名实体识别：BiLSTM 之上的 CRF 层 - 2">
-<meta name="twitter:description" content="在 上一篇文章 中, 我们了解到 CRF 能够从训练数据中学习到有关 Labels 序列的约束，进而可以确保最终的实体标注序列是合理有效的。">
-  <link rel="canonical" href="https://tosev7en.github.io/2018/10/04/CRF-2/">
+<meta name="twitter:title" content="BatchNorm">
+<meta name="twitter:description" content="$x_1 + y_2 = 120$">
+  <link rel="canonical" href="https://tosev7en.github.io/2019/10/04/BatchNorm/">
 
 
 <script id="page-configurations">
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title>命名实体识别：BiLSTM 之上的 CRF 层 - 2 | TSW</title>
+  <title>BatchNorm | TSW</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="https://tosev7en.github.io/2018/10/04/CRF-2/">
+    <link itemprop="mainEntityOfPage" href="https://tosev7en.github.io/2019/10/04/BatchNorm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ToSev7en">
@@ -315,7 +315,7 @@
       <meta itemprop="name" content="TSW">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">命名实体识别：BiLSTM 之上的 CRF 层 - 2
+        <h1 class="post-title" itemprop="name headline">BatchNorm
 
           
         </h1>
@@ -331,19 +331,11 @@
                 
               
 
-              <time title="创建时间：2018-10-04 00:44:45" itemprop="dateCreated datePublished" datetime="2018-10-04T00:44:45+08:00">2018-10-04</time>
+              <time title="创建时间：2019-10-04 01:42:30 / 修改时间：02:17:58" itemprop="dateCreated datePublished" datetime="2019-10-04T01:42:30+08:00">2019-10-04</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-04 02:20:03" itemprop="dateModified" datetime="2019-10-04T02:20:03+08:00">2019-10-04</time>
-              </span>
             
           
 
@@ -358,58 +350,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在 <a href="https://createmomo.github.io/2017/09/12/CRF_Layer_on_the_Top_of_BiLSTM_1/" target="_blank" rel="noopener">上一篇文章</a> 中, 我们了解到 CRF 能够从训练数据中学习到有关 Labels 序列的约束，进而可以确保最终的实体标注序列是合理有效的。</p>
+        <p>$x_1 + y_2 = 120$</p>
 <a id="more"></a>
-<h4 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h4><p>在 <a href="https://createmomo.github.io/2017/09/12/CRF_Layer_on_the_Top_of_BiLSTM_1/" target="_blank" rel="noopener">上一篇文章</a> 中, 我们了解到 CRF 能够从训练数据中学习到有关 Labels 序列的约束，进而可以确保最终的实体标注序列是合理有效的。</p>
-<p>这些约束可以是：</p>
-<ul>
-<li>句子中首个单词的 Label 应该是 “B-“ or “O”, 而不会是 “I-“</li>
-<li><p>“B-label1 I-label2 I-label3 I-…”,在这个模式中, label1, label2, label3 … 应该是同一实体的 Label。譬如，“B-Person I-Person” 是合理有效的，但是  “B-Person I-Organization” 便是无效的。</p>
-</li>
-<li><p>“O I-label” 是无效的。命名实体的第一个起始标注应该是 “B-“ 开头的，而不是  “I-“。换一句话说，合理有效的模式应该是  “O B-label”</p>
-</li>
-<li><p>…</p>
-</li>
-</ul>
-<p>在读完这篇文章后，你将会知道为什么 CRF 能够学习到这些约束。</p>
-<h3 id="2-CRF-Layer"><a href="#2-CRF-Layer" class="headerlink" title="2. CRF Layer"></a>2. CRF Layer</h3><p>在  CRF  层的 Loss Function 中，我们有两种 Score ，Emission Score 和 Transition Score 它们是 CRF  层的关键。</p>
-<h4 id="2-1-Emission-Score"><a href="#2-1-Emission-Score" class="headerlink" title="2.1 Emission Score"></a>2.1 Emission Score</h4><p>第一个便是 Emission Score 。这里的 Emission Scores 来自于 BiLSTM 层，如下图所示，$w_0$ 被标记为 B-Person  的 score 是 1.5</p>
-<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-e77acaa15e0c6d77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
-<p>为了方便理解，在这里给每个 label 一个索引标签：</p>
-<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-f85dce456924c800.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
-<p>我们使用 $x<em>{i,y_j}$ 表示 Emission Score，$i$ 是 word 的 index， $y_j$  是 label 的 index。譬如，依据上面的图可以得到，$x</em>{i=1,y<em>j=2} = x</em>{w1, B-Organization} = 0.1$, 意思就是 $w_1$ 被标注为 B-Organization 的 score 为 0.1。</p>
-<h4 id="2-2-Transition-Score"><a href="#2-2-Transition-Score" class="headerlink" title="2.2 Transition Score"></a>2.2 Transition Score</h4><p>对于 Transition Score ，我们使用 $t<em>{y_jy_j}$ 表示。譬如，$t</em>{B-Persion, I-Person} = 0.9$，意思就是标签 B-Persion 转移到 I-Person 的 score 为 0.9。这样的话，我们便拥有了一个 转移矩阵，其中存储着所有标签之间的 Transition Score。</p>
-<p>为了使得转移分数矩阵更加具有鲁棒性，我们得添加一些标签，START 和 END。START 表示句子的起始，并不是句子的第一个 word；END 表示句子的结束。</p>
-<p>这里就是一个 transition matrix score 的例子，其中包含了我们额外添加的START 和 END 标签。</p>
-<p><img alt data-src="https://upload-images.jianshu.io/upload_images/244848-18095c2c0968bf34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
-<p>如上表所示，我们能够发现这个状态转移举证已经学习到了某些约束了。</p>
-<ul>
-<li><p>句子中的第一个单词的标记应该是以“B-“ 或者 “O”开头, 并不会是 “I-”形式的标记。（可以从表中发现， “START” 到 “I-Person or I-Organization” 的转移值非常的小。）</p>
-</li>
-<li><p>在“B-label1 I-label2 I-label3 I-…”这样形式的标注序列中， label1, label2, label3 … 应该是同种实体的标签。比如，“B-Person I-Person”  是合理有效的标注序列，而 “B-Person I-Organization” 则不是。(譬如, the score from “B-Organization” to “I-Person” is only 0.0003 which is much lower than the others.)</p>
-</li>
-<li><p>“O I-label” is invalid. The first label of one named entity should start with “B-“ not “I-“, in other words, the valid pattern should be “O B-label” (表中 $t_{O, I-Person}$ 的值非常的小。）</p>
-</li>
-</ul>
-<p>好了，这时候你脑子里该满是黑人问号了，这个矩阵从哪里来的？？</p>
-<p>确切的说，这个矩阵是 BiLSTM-CRF 模型的一个参数。在你训练模型之前，你可以随机地初始化矩阵中所有的 transition score。在之后的训练过程中，这些随机初始化的 score 将会被自动更新。换句话说，CRF 层可以自己学习到这些约束。我们并不需要手动创建这样一个矩阵。这些分数值会随着训练的迭代次数的增加，变得越来越 “合理”。</p>
-<h4 id="2-3-CRF-loss-function"><a href="#2-3-CRF-loss-function" class="headerlink" title="2.3 CRF loss function"></a>2.3 CRF loss function</h4><p>CRF 的损失函数由 真实转移路径值 和 所有可能转移路径值两部分组成。真实路径表示在所有可能转移路径中具有最高 score 的路径。</p>
-<p>假如我们的数据集中有这样一些标记：</p>
-<p><img alt="image.png" data-src="https://upload-images.jianshu.io/upload_images/244848-2c188c8d806ace11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
-<p>我们也有一个由 5 个单词组成的句子，那么标签的可能转移路径有：</p>
-<p>1.START B-Person B-Person B-Person B-Person B-Person END</p>
-<p>2.START B-Person I-Person B-Person B-Person B-Person END<br>…<br>10.START B-Person I-Person O B-Organization O END<br>…<br>N.O O O O O O O</p>
-<p>假定每一个可能的路径有一个分数值 $P<em>i$, 那么对于所有 N 条可能的路径的总分数值为 $P</em>{total} = P_1 + P_2 + P_3 + … + P_N = e^{S_1} + e^{S_2} + e^{S_3} + … + e^{S_N}$，e 是数学常量 e。（在 2.4  节，我们会讨论如何计算 $S_i$，你也可以将它直接作为该路径的分数值。）</p>
-<p>假如这里的第十条路径是真实的路径，换句话说，第十条路径是训练集提供的“黄金准则”。那么， $P_{10} $ 就应该在所有的路径分数值之和中占据最大的比例。</p>
-<p>下面给出方程便是我们一直讨论的 Loss Function，在训练阶段，BiLSTM-CRF 模型的参数值将会一直不停的被更新，来提高真实路径的分数值所占的比重。</p>
-<script type="math/tex; mode=display">Loss Function = P_{RealPath} / P_{1}+P_{2}+P_{3}+P_{4}+...+P_{N}</script><p>现在，问题来了：</p>
-<ol>
-<li>如何定义一条路径的分数值？</li>
-<li>如何计算所有路径的总分数值？</li>
-<li>当我们计算所有分数值的时候，我们需要列出所有可能的路径吗？（提前透露一下答案：不需要！）</li>
-</ol>
-<h4 id="Real-path-score"><a href="#Real-path-score" class="headerlink" title="Real path score"></a>Real path score</h4><p>今天就到这里吧～</p>
-<p>参考文献<br>[1] Lample, G., Ballesteros, M., Subramanian, S., Kawakami, K. and Dyer, C., 2016. Neural architectures for named entity recognition. arXiv preprint arXiv:1603.01360.<br>[2] <a href="https://createmomo.github.io/2017/09/23/CRF_Layer_on_the_Top_of_BiLSTM_2/" target="_blank" rel="noopener">https://createmomo.github.io/2017/09/23/CRF_Layer_on_the_Top_of_BiLSTM_2/</a></p>
+<p>$\vec{a} \cdot \vec{b}=0$</p>
+<p>\( x_i \)</p>
+<p>$x^{y^z}=(1+{\rm e}^x)^{-2xy^w}$</p>
 
     </div>
 
@@ -426,7 +371,7 @@
     <strong>本文作者： </strong>ToSev7en</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://tosev7en.github.io/2018/10/04/CRF-2/" title="命名实体识别：BiLSTM 之上的 CRF 层 - 2">https://tosev7en.github.io/2018/10/04/CRF-2/</a>
+    <a href="https://tosev7en.github.io/2019/10/04/BatchNorm/" title="BatchNorm">https://tosev7en.github.io/2019/10/04/BatchNorm/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -441,7 +386,7 @@
           
           <div class="post-tags">
             
-              <a href="/tags/CRF/" rel="tag"># CRF</a>
+              <a href="/tags/BN/" rel="tag"># BN</a>
             
           </div>
         
@@ -451,8 +396,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2018/10/04/CRF-1/" rel="next" title="命名实体识别： BiLSTM 之上的 CRF 层 - 1">
-                  <i class="fa fa-chevron-left"></i> 命名实体识别： BiLSTM 之上的 CRF 层 - 1
+                <a href="/2018/10/04/CRF-2/" rel="next" title="命名实体识别：BiLSTM 之上的 CRF 层 - 2">
+                  <i class="fa fa-chevron-left"></i> 命名实体识别：BiLSTM 之上的 CRF 层 - 2
                 </a>
               
             </div>
@@ -460,10 +405,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/04/BatchNorm/" rel="prev" title="BatchNorm">
-                  BatchNorm <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -510,8 +451,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#回顾"><span class="nav-number">1.</span> <span class="nav-text">回顾</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-CRF-Layer"><span class="nav-number"></span> <span class="nav-text">2. CRF Layer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-Emission-Score"><span class="nav-number">1.</span> <span class="nav-text">2.1 Emission Score</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-Transition-Score"><span class="nav-number">2.</span> <span class="nav-text">2.2 Transition Score</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-CRF-loss-function"><span class="nav-number">3.</span> <span class="nav-text">2.3 CRF loss function</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Real-path-score"><span class="nav-number">4.</span> <span class="nav-text">Real path score</span></a></li></ol></div>
-        
       </div>
       <!--/noindex-->
 
