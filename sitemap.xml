@@ -2,6 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/03/06/LSTM-CRF/</loc>
+    
+    <lastmod>2019-01-18T12:34:35.806Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/28/understanding-one-hot-encoding/</loc>
+    
+    <lastmod>2019-01-18T12:18:07.957Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/05/11/DSA-LinkedList/</loc>
+    
+    <lastmod>2018-05-12T08:42:28.887Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/05/04/cpp-primer-notes-02/</loc>
+    
+    <lastmod>2018-05-06T07:03:43.180Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/</loc>
+    
+    <lastmod>2018-05-06T07:03:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/05/05/cpp-primer-notes-03/</loc>
+    
+    <lastmod>2018-05-05T07:32:07.276Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/05/04/cpp-primer-notes-01/</loc>
+    
+    <lastmod>2018-05-05T04:29:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/05/01/From-Frequency-to-Meaning-Vector-Space-Models-of-Semantics/</loc>
+    
+    <lastmod>2018-05-01T14:25:46.164Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/30/awesome-resources/</loc>
+    
+    <lastmod>2018-05-01T12:10:18.006Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/30/why-cross-entropy-error/</loc>
+    
+    <lastmod>2018-04-30T14:08:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/28/ML&DL-Notes/</loc>
+    
+    <lastmod>2018-04-30T04:22:53.959Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/06/hmm-model/</loc>
+    
+    <lastmod>2018-04-29T08:19:15.203Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/04/18/word-window-classification-and-nn/</loc>
     
     <lastmod>2018-04-18T08:34:28.843Z</lastmod>
@@ -23,13 +107,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/</loc>
-    
-    <lastmod>2018-04-18T07:27:42.714Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2018/04/18/%08language-modeling-with-n-grams/</loc>
     
     <lastmod>2018-04-18T07:27:09.325Z</lastmod>
@@ -47,13 +124,6 @@
     <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2018-04-18T06:11:33.077Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/06/hmm-model/</loc>
-    
-    <lastmod>2018-03-06T13:22:25.612Z</lastmod>
     
   </url>
   

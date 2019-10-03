@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>TSW</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-18T08:34:28.843Z</updated>
+  <updated>2018-05-12T08:42:28.887Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,228 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>链表</title>
+    <link href="http://yoursite.com/2018/05/11/DSA-LinkedList/"/>
+    <id>http://yoursite.com/2018/05/11/DSA-LinkedList/</id>
+    <published>2018-05-11T07:50:00.000Z</published>
+    <updated>2018-05-12T08:42:28.887Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.定义链表节点的结构体时，C 和 C++ 写法的差异</p><p>2.初始化链表，带不带头节点</p><p>头指针<br>尾指针</p><p>首节点<br>尾节点</p><p>With 头节点<br>操作同一</p><p>Without 头节点<br>链表合并方便</p><p>头插法</p><p>尾插法</p><p>实现两个带头节点的链表 L1 和 L2进行连接，L2 连接到 L2 末尾。</p><p>将两个有序链表合并为一个有序链表。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1.定义链表节点的结构体时，C 和 C++ 写法的差异&lt;/p&gt;
+&lt;p&gt;2.初始化链表，带不带头节点&lt;/p&gt;
+&lt;p&gt;头指针&lt;br&gt;尾指针&lt;/p&gt;
+&lt;p&gt;首节点&lt;br&gt;尾节点&lt;/p&gt;
+&lt;p&gt;With 头节点&lt;br&gt;操作同一&lt;/p&gt;
+&lt;p&gt;Without 头节点&lt;br&gt;链表合并方
+      
+    
+    </summary>
+    
+    
+      <category term="C" scheme="http://yoursite.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ Primer Note 3 字符串、向量和数组</title>
+    <link href="http://yoursite.com/2018/05/05/cpp-primer-notes-03/"/>
+    <id>http://yoursite.com/2018/05/05/cpp-primer-notes-03/</id>
+    <published>2018-05-05T06:00:00.000Z</published>
+    <updated>2018-05-05T07:32:07.276Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ Primer Note 2 变量和基本类型</title>
+    <link href="http://yoursite.com/2018/05/04/cpp-primer-notes-02/"/>
+    <id>http://yoursite.com/2018/05/04/cpp-primer-notes-02/</id>
+    <published>2018-05-04T13:00:00.000Z</published>
+    <updated>2018-05-06T07:03:43.180Z</updated>
+    
+    <content type="html"><![CDATA[<p>数据类型是程序的基础：它告诉我们数据的意义以及我们能在数据上执行的操作。</p><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>C++ 定义了一套包括 算数类型 和 空类型 在内点基本数据类型。其中 算术类型 包括 字符、整数型、布尔值和 浮点数。空类型不对应具体的值，仅用于一些特殊点场合，例如最常见点是，当函数不返回任何值时使用空类型作为返回类型。</p><p>在 C++ 中初始化是一个异常复杂的问题。</p><p>在 C++ 中 初始化 和 赋值 是两种完全不同的操作。</p><h3 id="列表初始化"><a href="#列表初始化" class="headerlink" title="列表初始化"></a>列表初始化</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> unit_num = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> unit_num = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> unit_num&#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">unit_num</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br></pre></td></tr></table></figure><p>作为 C++11 新标准的一部分，用花括号初始化变量的到来全面的应用。</p><h3 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h3><p>引用和指针</p><h3 id="2-6-自定义数据结构"><a href="#2-6-自定义数据结构" class="headerlink" title="2.6 自定义数据结构"></a>2.6 自定义数据结构</h3><h4 id="预处理器"><a href="#预处理器" class="headerlink" title="预处理器"></a>预处理器</h4><p>确保头文件多次包含仍然能正常工作的常用技术是预处理器（Preprocessor），它由 C++ 语言从 C语言中继承而来。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;数据类型是程序的基础：它告诉我们数据的意义以及我们能在数据上执行的操作。&lt;/p&gt;
+&lt;h3 id=&quot;基本数据类型&quot;&gt;&lt;a href=&quot;#基本数据类型&quot; class=&quot;headerlink&quot; title=&quot;基本数据类型&quot;&gt;&lt;/a&gt;基本数据类型&lt;/h3&gt;&lt;p&gt;C++ 定义了一套包
+      
+    
+    </summary>
+    
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ Primer Note 1</title>
+    <link href="http://yoursite.com/2018/05/04/cpp-primer-notes-01/"/>
+    <id>http://yoursite.com/2018/05/04/cpp-primer-notes-01/</id>
+    <published>2018-05-04T12:00:00.000Z</published>
+    <updated>2018-05-05T04:29:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在 C++ 中，我们通过定义一个 <strong>类（Class）</strong>来定义自己的数据结构。一个<strong>类</strong>定义的一种<strong>数据类型</strong>，以及相关联的一组<strong>操作</strong>。类机制是 C++ 中最重要的特性之一。实际上， C++ 在设计之初的考虑就是能够定义使用上如同内置类型一样自然的 <strong>类类型（Class Type）</strong>。每一个类实际上都定义了一种新的类型，其类型名就是类名。</p><p>类的定义一般放在头文件中，通常使用<code>.h</code>作为头文件的后缀。标准库头文件一般不带后缀。</p><p>对于 <code>#include</code> 指令，包含来自标准库的头文件时，用<strong>尖括号</strong> <code>(&lt;&gt;)</code> 包围头文件名。对于不属于标准库的头文件，则用<strong>双引号</strong> <code>(&quot;&quot;)</code> 包围。</p><p>文件重定向:将标准输入和标准输出与命名文件相关联起来。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> addItem &lt;input_file &gt;output_file</span><br></pre></td></tr></table></figure></p><p><strong>成员函数（member function）</strong>定义为类的一部分的函数，有时候也被称为方法（Method）。</p><p>点运算符 <code>.</code></p><p>调用运算符 <code>()</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在 C++ 中，我们通过定义一个 &lt;strong&gt;类（Class）&lt;/strong&gt;来定义自己的数据结构。一个&lt;strong&gt;类&lt;/strong&gt;定义的一种&lt;strong&gt;数据类型&lt;/strong&gt;，以及相关联的一组&lt;strong&gt;操作&lt;/strong&gt;。类机制是 C++ 
+      
+    
+    </summary>
+    
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从频率到语义</title>
+    <link href="http://yoursite.com/2018/05/01/From-Frequency-to-Meaning-Vector-Space-Models-of-Semantics/"/>
+    <id>http://yoursite.com/2018/05/01/From-Frequency-to-Meaning-Vector-Space-Models-of-Semantics/</id>
+    <published>2018-05-01T14:00:00.000Z</published>
+    <updated>2018-05-01T14:25:46.164Z</updated>
+    
+    <content type="html"><![CDATA[<p>hello</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;hello&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="ML" scheme="http://yoursite.com/tags/ML/"/>
+    
+      <category term="DL" scheme="http://yoursite.com/tags/DL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ML &amp; DL 资源汇总</title>
+    <link href="http://yoursite.com/2018/04/30/awesome-resources/"/>
+    <id>http://yoursite.com/2018/04/30/awesome-resources/</id>
+    <published>2018-04-30T07:08:20.000Z</published>
+    <updated>2018-05-01T12:10:18.006Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://deeplearning.stanford.edu/tutorial/" target="_blank" rel="noopener">UFLDL Tutorial</a></p><p><a href="https://github.com/spro/practical-pytorch" target="_blank" rel="noopener">https://github.com/spro/practical-pytorch</a></p><p><a href="https://github.com/jadore801120/attention-is-all-you-need-pytorch" target="_blank" rel="noopener">https://github.com/jadore801120/attention-is-all-you-need-pytorch</a></p><p><a href="https://github.com/rguthrie3/DeepLearningForNLPInPytorch" target="_blank" rel="noopener">https://github.com/rguthrie3/DeepLearningForNLPInPytorch</a></p><p><a href="https://github.com/yunjey/pytorch-tutorial" target="_blank" rel="noopener">https://github.com/yunjey/pytorch-tutorial</a></p><p><a href="https://github.com/aaron-xichen/pytorch-playground" target="_blank" rel="noopener">https://github.com/aaron-xichen/pytorch-playground</a></p><p><a href="https://zhuanlan.zhihu.com/p/28448135" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28448135</a></p><h2 id="NLP"><a href="#NLP" class="headerlink" title="NLP"></a>NLP</h2><h2 id="CV"><a href="#CV" class="headerlink" title="CV"></a>CV</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://deeplearning.stanford.edu/tutorial/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;UFLDL Tutorial&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com
+      
+    
+    </summary>
+    
+    
+      <category term="ML" scheme="http://yoursite.com/tags/ML/"/>
+    
+      <category term="DL" scheme="http://yoursite.com/tags/DL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为什么使用  Cross-Entropy Error ？</title>
+    <link href="http://yoursite.com/2018/04/30/why-cross-entropy-error/"/>
+    <id>http://yoursite.com/2018/04/30/why-cross-entropy-error/</id>
+    <published>2018-04-30T07:08:20.000Z</published>
+    <updated>2018-04-30T14:08:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在使用神经网络进行分类和预测的时候，使用 Cross Entropy Error 来 evaluate 模型比使用 classification error 和 mean squared error 能取得更好的效果。为什么呢？让我来解释一下。基本的 idea 是非常简单的，但是目前有很多对其 main idea 存在误解的看法。首先说明一下我们正在用一个神经网络模型来进行分类任务，比如通过性别、年龄、年收入等预测一个人的党派属性（属于民主党、共和党或者其他党派）。我们不是在用神经网络进行回归任务（其预测值为数值型），或者一个时间序列的神经网络，又或者是其他的什么神经网络。</p><p>现在假设你有三个训练数据的样本。你的神经网络在输出层使用 softmax 激活函数将输出值转换为概率。假设神经网络的输出值和样本的实际值如下所示：<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|<span class="string"> computed       </span>|<span class="string">      targets         </span>|<span class="string"> correct? </span>|</span><br><span class="line">|<span class="string"> -------------- </span>|<span class="string">----------------------</span>|<span class="string">----------</span>|<span class="string"> </span></span><br><span class="line">|<span class="string"> 0.3  0.3  0.4  </span>|<span class="string"> 0  0  1 (democrat)   </span>|<span class="string">    yes   </span>|</span><br><span class="line">|<span class="string"> 0.3  0.4  0.3  </span>|<span class="string"> 0  1  0 (republican) </span>|<span class="string">    yes   </span>|</span><br><span class="line">|<span class="string"> 0.1  0.2  0.7  </span>|<span class="string"> 1  0  0 (other)      </span>|<span class="string">     no   </span>|</span><br></pre></td></tr></table></figure></p><p>这个神经网络的分类误差为 $\frac{1}{3} = 0.33$ ，其对应的分类准确率为 $\frac{2}{3}=0.67$ 。注意到这个神经网络仅仅将前两个样本分类正确，在第三个样本上却错的离谱。现在来看看另外一个神经网络：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed       | targets              | correct?</span><br><span class="line">-----------------------------------------------</span><br><span class="line"><span class="number">0.1</span>  <span class="number">0.2</span>  <span class="number">0.7</span>  | <span class="number">0</span>  <span class="number">0</span>  <span class="number">1</span> (democrat)   | yes</span><br><span class="line"><span class="number">0.1</span>  <span class="number">0.7</span>  <span class="number">0.2</span>  | <span class="number">0</span>  <span class="number">1</span>  <span class="number">0</span> (republican) | yes</span><br><span class="line"><span class="number">0.3</span>  <span class="number">0.4</span>  <span class="number">0.3</span>  | <span class="number">1</span>  <span class="number">0</span>  <span class="number">0</span> (other)      | no</span><br></pre></td></tr></table></figure></p><p>这个神经网络的分类误差也是 $\frac{1}{3} = 0.33$ 。但是这个神经网络的表现要比第一个要好，因为它预测正确分类的概率值要大，且对于第三个样本也仅仅是差一点就预测对了，不像第一个预测的那么离谱。由此看来，分类误差是一个很“粗暴”的误差度量指标。</p><p>现在我们看看 cross-entropy error。第一个神经网络对于第一个样本的交叉熵误差为：</p><script type="math/tex; mode=display">-( (ln(0.3)*0) + (ln(0.3)*0) + (ln(0.4)*1) ) = -ln(0.4)</script><p>注意到在这个神经网络分类中，计算有一点“怪异”，因为除了一项以外都是 0 。（网络上几个讲如何计算交叉熵的解释还不错。）所以，第一个神经网络的平均交叉熵误差计算如下：</p><script type="math/tex; mode=display">-(ln(0.4) + ln(0.4) + ln(0.1)) / 3 = 1.38</script><p>第二个神经网络的平均交叉熵误差为：</p><script type="math/tex; mode=display">-(ln(0.7) + ln(0.7) + ln(0.3)) / 3 = 0.64</script><p>Notice that the average cross-entropy error for the second, superior neural network is smaller than the ACE error for the first neural network. The ln() function in cross-entropy takes into account the closeness of a prediction and is a more granular way to compute error.</p><p>本文翻译自:<a href="https://jamesmccaffrey.wordpress.com/2013/11/05/why-you-should-use-cross-entropy-error-instead-of-classification-error-or-mean-squared-error-for-neural-network-classifier-training/" target="_blank" rel="noopener">Why You Should Use Cross-Entropy Error Instead Of Classification Error Or Mean Squared Error For Neural Network Classifier Training</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在使用神经网络进行分类和预测的时候，使用 Cross Entropy Error 来 evaluate 模型比使用 classification error 和 mean squared error 能取得更好的效果。为什么呢？让我来解释一下。基本的 idea 是非常简单的
+      
+    
+    </summary>
+    
+    
+      <category term="ML" scheme="http://yoursite.com/tags/ML/"/>
+    
+      <category term="DL" scheme="http://yoursite.com/tags/DL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>理解 One-Hot Encoding</title>
+    <link href="http://yoursite.com/2018/04/28/understanding-one-hot-encoding/"/>
+    <id>http://yoursite.com/2018/04/28/understanding-one-hot-encoding/</id>
+    <published>2018-04-28T06:11:20.000Z</published>
+    <updated>2019-01-18T12:18:07.957Z</updated>
+    
+    <content type="html"><![CDATA[<p>在将数据“喂”给机器学习模型之前，我们有必要对原始数据进行预处理。</p><p>One-Hot Encoding 可以将 <code>类别特征</code> 转换为分类和回归算法更易于处理的格式。</p><p><img src="https://i.imgur.com/mtimFxh.png" alt=""></p><!-- ![sdsa](https://qph.ec.quoracdn.net/main-qimg-715744b45247794c88f6b68beb744ad4) --><!-- ![](https://qph.ec.quoracdn.net/main-qimg-bea46ccd4bdc05c5feaedc3e341ed426) --><p>[1] <a href="https://www.kaggle.com/dansbecker/using-categorical-data-with-one-hot-encoding" target="_blank" rel="noopener">Using Categorical Data with One Hot Encoding</a></p><!-- <span class='quora-content-embed' data-name='What-is-one-hot-encoding-and-when-is-it-used-in-data-science/answer/Håkon-Hapnes-Strand'>Read <a class='quora-content-link' data-width='560' data-height='260' href='https://www.quora.com/What-is-one-hot-encoding-and-when-is-it-used-in-data-science/answer/Håkon-Hapnes-Strand' data-type='answer' data-id='31598314' data-key='85f0b4c60f0cdc8fb55f987152db61b2' load-full-answer='False' data-embed='aarbgmk'><a href='https://www.quora.com/Håkon-Hapnes-Strand'>Håkon Hapnes Strand</a>&#039;s <a href='/What-is-one-hot-encoding-and-when-is-it-used-in-data-science#ans31598314'>answer</a> to <a href='/What-is-one-hot-encoding-and-when-is-it-used-in-data-science' ref='canonical'><span class="rendered_qtext">What is one hot encoding and when is it used in data science?</span></a></a> on <a href='https://www.quora.com'>Quora</a><script type="text/javascript" src="https://www.quora.com/widgets/content"></script></span> -->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在将数据“喂”给机器学习模型之前，我们有必要对原始数据进行预处理。&lt;/p&gt;
+&lt;p&gt;One-Hot Encoding 可以将 &lt;code&gt;类别特征&lt;/code&gt; 转换为分类和回归算法更易于处理的格式。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/
+      
+    
+    </summary>
+    
+    
+      <category term="ML" scheme="http://yoursite.com/tags/ML/"/>
+    
+      <category term="Kaggle" scheme="http://yoursite.com/tags/Kaggle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ML &amp; DL 知识点</title>
+    <link href="http://yoursite.com/2018/04/28/ML&amp;DL-Notes/"/>
+    <id>http://yoursite.com/2018/04/28/ML&amp;DL-Notes/</id>
+    <published>2018-04-28T06:11:20.000Z</published>
+    <updated>2018-04-30T04:22:53.959Z</updated>
+    
+    <content type="html"><![CDATA[<p>梯度消失</p><p>梯度爆炸</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;梯度消失&lt;/p&gt;
+&lt;p&gt;梯度爆炸&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="ML" scheme="http://yoursite.com/tags/ML/"/>
+    
+      <category term="DL" scheme="http://yoursite.com/tags/DL/"/>
+    
+  </entry>
   
   <entry>
     <title>CS224N Lecture 4 - Word Window Classification and NN</title>
@@ -75,7 +297,7 @@
     <link href="http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/"/>
     <id>http://yoursite.com/2018/03/06/cnn-convolution-and-pooling/</id>
     <published>2018-03-06T13:12:20.000Z</published>
-    <updated>2018-04-18T07:27:42.714Z</updated>
+    <updated>2018-05-06T07:03:36.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Fully-Connected-Layer-全连接层"><a href="#Fully-Connected-Layer-全连接层" class="headerlink" title="Fully Connected Layer 全连接层"></a>Fully Connected Layer 全连接层</h3><img src="/2018/03/06/cnn-convolution-and-pooling/FCLayer.jpg" title="From CS231N"><p>32 \( \times \) 32\(\times\)3 image \(\to\) stretch to 3072\(\times\)1</p><h3 id="Convolution-Layer-卷积层"><a href="#Convolution-Layer-卷积层" class="headerlink" title="Convolution Layer 卷积层"></a>Convolution Layer 卷积层</h3><p>卷积层与全连接层的主要差别在于前者可以保全 <em>空间结构</em> (Spatial Structure)。处理一张 32 \( \times \) 32\(\times\)3 的图片，不同于全连接层中将其展开为一维的长向量作为输入，我们在卷积层直接将图片的三维的结构输入，这样我们就可以保持图片的结构。</p><img src="/2018/03/06/cnn-convolution-and-pooling/ConvLayer.jpg" title="From Stanford CS231N"><p>接下来，我们的权重是一些小的卷积核，例如 5 \( \times \) 5 \(\times\) 3 的大小，我们将把这个卷积核在整个图像上滑动，并计算出在每一个<em>空间定位</em>（Spatial Location）时的 Dot Product。</p><img src="/2018/03/06/cnn-convolution-and-pooling/0-3.gif" title="From Stanford CS231N"><p>首先，我们采用的卷积核总是会将输入量扩展至完全（extend the Full Depth of the input volume）。它们都是很小的空间区域，这里是  5 \( \times \) 5 而不是输入空间的全部大小 32 \( \times \) 32，但是他们通常会遍历所有的RGB通道 ，所以这里我们采用的卷积核的大小为  5 \( \times \) 5 \(\times\) 3 。</p><img src="/2018/03/06/cnn-convolution-and-pooling/ConvFilter.jpg" title="From Stanford CS231N">]]></content>
     
@@ -98,13 +320,42 @@
   </entry>
   
   <entry>
+    <title>命名实体识别: BiLSTM 之上的 CRF 层 - 1</title>
+    <link href="http://yoursite.com/2018/03/06/LSTM-CRF/"/>
+    <id>http://yoursite.com/2018/03/06/LSTM-CRF/</id>
+    <published>2018-03-06T12:34:59.000Z</published>
+    <updated>2019-01-18T12:34:35.806Z</updated>
+    
+    <content type="html"><![CDATA[<p>注：本文翻译自 CreateMoMo 个人博客，暂未取得作者授权，仅做学习交流使用，如若侵权，立即删除。点击底部阅读原文可直达原博客。</p><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p>该系列文章将会涉及以下几个方面：</p><ul><li><p>Idea 概述 - 在命名实体识别任务中，为什么要在 BiLSTM模型上添加CRF层？</p></li><li><p>案例解读 - 通过一个简单的实现来揭示：CRF 层是怎样工作的？</p></li><li><p>Chainer 实现 BiLSTM+CRF 模型（翻译者会努力用 TensorFlow or PyTorch 来实现一番！）</p></li></ul><blockquote><p><strong>谁适合阅读本系列文章？</strong><br>本系列文章适合 NLP 或其他 AI 相关领域的初学者或者在校学生，希望你们在我的文章中能有所收获。期待有建设性的意见和建议！</p></blockquote><h3 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h3><p>如果你不知道神经网络、CRF 或者其他相关的知识，别担心，我会尽量从直觉上来帮助你来理解它们。唯一需要你知道的是命名实体识别的概念！</p><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h3><p>对于命名实体识别任务来说，基于神经网络和深度学习的方法越来越流行了。比如在这篇<a href="https://arxiv.org/abs/1603.01360" target="_blank" rel="noopener">Paper</a>中，作者就提出了 BiLSTM-CRF 模型用于命名实体识别任务，文中使用了 word level 和 character level 的 embedding。我将使用这篇文章中的模型来解释模型中 CRF层 是如何工作的 :)  。</p><p>如果你还不了解有关 BiLSTM 和 CRF 的细节的话，只要记住它们不过是命名实体识别模型中两种不同的 Layer 罢了！</p><h4 id="1-1-开始之前"><a href="#1-1-开始之前" class="headerlink" title="1.1 开始之前"></a>1.1 开始之前</h4><p>首先，假设我们的数据集中有两种不同的实体类型：Person（人物） 和 Organization（组织）。那么，实际上，我们便有了五种实体的类别 Label ：</p><ul><li>B-Person</li><li>I-Person</li><li>B-Organization</li><li>I-Organization</li><li>O</li></ul><p>这样的话，假如我们使用 $x$ 代表包含五个单词的句子，$w_0,w_1,w_2,w_3,w_4$。那么，在句子 $x$ 中，$[w_0,w_1]$ 是一个 Person 实体，$[w_3]$ 是一个 Organization 实体，其他的单词我们用 $O$ 表示。</p><h4 id="1-2-BiLSTM-CRF-model"><a href="#1-2-BiLSTM-CRF-model" class="headerlink" title="1.2 BiLSTM-CRF model"></a>1.2 BiLSTM-CRF model</h4><p>在这里我会简要介绍一下 BiLSTM-CRF 模型。</p><p>如下图所示：</p><!-- ![](https://upload-images.jianshu.io/upload_images/244848-b5b908c814479bb5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) --><ul><li><p>首先，在句子 $x$ 中的每一个词 $w_i$都对应着一个向量表示，这个向量由字符级别的词嵌入(character embedding)和单词级别的词嵌入(word embedding)共同组成（concat 操作？）。其中，字符级别的词嵌入(character embedding)由随机初始化得到，而单词级别的词嵌入(word embedding)一般来自于预先训练好的 word embedding 文件(word2vec 或者 GloVe)。所有的 embeddings 在训练过程中将会被 fine-tuned。</p></li><li><p>其次，BiLSTM-CRF 模型的输入便是这些词向量，模型的输出是对句子 $x$ 中单词对应的标签类别的预测。尽管了解 BiLSTM 层的细节对于我们来说并不必要，但是为了更加容易的理解  CRF 层，还是有必要知道一下 BiLSTM 层输出结果表示什么意思。</p></li></ul><p><img src="https://upload-images.jianshu.io/upload_images/244848-f11c2b65063fcbcb.png" alt=""></p><p>如上所示， BiLSTM 层的输出是每个类别的预测分数值。譬如，对于词 $w_0$ 来说，BiLSTM 层的输出为：1.5 (B-Person), 0.9 (I-Person), 0.1 (B-Organization), 0.08 (I-Organization) 和 0.05 (O)。这些分数值将会作为 CRF 层的输入。</p><p>之后，在所有由 BiLSTM 层预测的分数值输入到 CRF 层之后，CRF 便会选择具有最高预测分数值的类别标记序列作为最佳的答案。</p><h4 id="1-3-如果没有-CRF-层会怎么样？"><a href="#1-3-如果没有-CRF-层会怎么样？" class="headerlink" title="1.3 如果没有 CRF 层会怎么样？"></a>1.3 如果没有 CRF 层会怎么样？</h4><p>你可能已经注意到了，假使没有 CRF 层，我们一样可以只训练 LSTM 来进行命名实体识别，流程如下：</p><!-- ![](https://upload-images.jianshu.io/upload_images/244848-377249e63336d1cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) --><p>因为 BiLSTM 层输出的正是每个单词的在各个类标上的分数值，我们完全可以选择具有最高分数的类标作为单词的命名实体类别标注。</p><p>譬如，对于 $w_0$ 来说， “B-Person” 具有最高的得分（1.5），因而我们可以选择 “B-Person”作为最佳的预测。同理，对于$w_1$，我们可以选择  “I-Person”；对于 $w_2$，我们可以选择  “O”；对于 $w_3$，我们可以选择  “B-Org”；对于 $w_2$，我们可以选择  “O”。</p><p>在这个例子中，尽管我们可以得到句子$x$中各个单词的正确类别标记。但是，有些情况下并不总是如此，看一看这个例子：</p><!-- ![](https://upload-images.jianshu.io/upload_images/244848-cb15482e1a81f09c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) --><p>很显然，沿用上面的方法，我们得到的输出（“I-Organization I-Person” 和 “B-Organization I-Person” ）便显得非常的不合理了，I-Organization 之后竟然会出现 I-Person 的标注！</p><h4 id="1-4-CRF-层能够从训练数据中学习到标注序列的一些“约束”"><a href="#1-4-CRF-层能够从训练数据中学习到标注序列的一些“约束”" class="headerlink" title="1.4 CRF 层能够从训练数据中学习到标注序列的一些“约束”"></a>1.4 CRF 层能够从训练数据中学习到标注序列的一些“约束”</h4><p>The CRF layer could add some constrains to the final predicted labels to ensure they are valid. These constrains can be learned by the CRF layer automatically from the training dataset during the training process.</p><p>CRF 层能够给最终的预测 Labels 添加一些约束来确保其合理有效。在训练过程中，这些约束会被 CRF 层自动学习到。</p><p>这些约束可以是：</p><ul><li>句子中首个单词的 Label 应该是 “B-“ or “O”, 而不会是 “I-“</li><li><p>“B-label1 I-label2 I-label3 I-…”,在这个模式中, label1, label2, label3 … 应该是同一实体的 Label。譬如，“B-Person I-Person” 是合理有效的，但是  “B-Person I-Organization” 便是无效的。</p></li><li><p>“O I-label” 是无效的。命名实体的第一个起始标注应该是 “B-“ 开头的，而不是  “I-“。换一句话说，合理有效的模式应该是  “O B-label”</p></li></ul><p>有了这些必要的约束，出现不合理标注序列的数量将会显著下降！</p><h4 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h4><p>接下来，我将通过分析 CRF 的 Loss Function 来解释 CRF 层如何从训练数据集中学习到上述约束，以及为什么 CRF 能够学习到它们。</p><p>别走开，后续更加精彩！</p><p>参考文献</p><p><a href="https://createmomo.github.io/2017/09/12/CRF_Layer_on_the_Top_of_BiLSTM_1/" target="_blank" rel="noopener">[1] CRF_Layer_on_the_Top_of_BiLSTM_1</a><br><a href="[https://arxiv.org/abs/1603.01360](https://arxiv.org/abs/1603.01360">[2] Lample, G., Ballesteros, M., Subramanian, S., Kawakami, K. and Dyer, C., 2016. Neural architectures for named entity recognition. arXiv preprint arXiv:1603.01360.</a>)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;注：本文翻译自 CreateMoMo 个人博客，暂未取得作者授权，仅做学习交流使用，如若侵权，立即删除。点击底部阅读原文可直达原博客。&lt;/p&gt;
+&lt;h3 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>hmm-model</title>
     <link href="http://yoursite.com/2018/03/06/hmm-model/"/>
     <id>http://yoursite.com/2018/03/06/hmm-model/</id>
     <published>2018-03-06T12:34:54.000Z</published>
-    <updated>2018-03-06T13:22:25.612Z</updated>
+    <updated>2018-04-29T08:19:15.203Z</updated>
+    
+    <content type="html"><![CDATA[<p><span class="quora-content-embed" data-name="What-is-one-hot-encoding-and-when-is-it-used-in-data-science/answer/Håkon-Hapnes-Strand">Read <a class="quora-content-link" data-width="560" data-height="260" href="https://www.quora.com/What-is-one-hot-encoding-and-when-is-it-used-in-data-science/answer/Håkon-Hapnes-Strand" data-type="answer" data-id="31598314" data-key="85f0b4c60f0cdc8fb55f987152db61b2" load-full-answer="False" data-embed="aarbgmk" target="_blank" rel="noopener"><a href="https://www.quora.com/Håkon-Hapnes-Strand" target="_blank" rel="noopener">Håkon Hapnes Strand</a>&#039;s <a href="/What-is-one-hot-encoding-and-when-is-it-used-in-data-science#ans31598314">answer</a> to <a href="/What-is-one-hot-encoding-and-when-is-it-used-in-data-science" ref="canonical"><span class="rendered_qtext">What is one hot encoding and when is it used in data science?</span>&lt;/a&gt;&lt;/a&gt; on <a href="https://www.quora.com" target="_blank" rel="noopener">Quora</a><script type="text/javascript" src="https://www.quora.com/widgets/content"></script><br>&lt;/span&gt;</a></a></span></p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;span class=&quot;quora-content-embed&quot; data-name=&quot;What-is-one-hot-encoding-and-when-is-it-used-in-data-science/answer/Håkon-Hapnes-Strand&quot;&gt;Rea
+      
     
     </summary>
     
